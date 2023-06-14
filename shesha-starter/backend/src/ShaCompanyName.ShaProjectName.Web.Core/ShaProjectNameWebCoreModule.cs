@@ -46,6 +46,16 @@ namespace ShaCompanyName.ShaProjectName
 	 )]
     public class ShaProjectNameWebCoreModule : AbpModule
     {
+        /// <summary>
+        /// Name of the connection string
+        /// </summary>
+        public const string ConnectionStringName = "Default";
+        
+        /// <summary>
+        /// Name of the DBMS setting key
+        /// </summary>
+        public const string DbmsTypeKey = "DbmsType";
+
         private readonly IConfigurationRoot _appConfiguration;
 
         /// <summary>
@@ -64,7 +74,7 @@ namespace ShaCompanyName.ShaProjectName
         {
             var config = Configuration.Modules.ShaNHibernate();
             
-            config.UseDbms(c => c.GetValue("DbmsType", DbmsType.SQLServer), c => c.GetConnectionString("Default"));
+            config.UseDbms(c => c.GetValue(DbmsTypeKey, DbmsType.SQLServer), c => c.GetConnectionString(ConnectionStringName));
 
             //config.UseMsSql();
             //config.UsePostgreSql();
