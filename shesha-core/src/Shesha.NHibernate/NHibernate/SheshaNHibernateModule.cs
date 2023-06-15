@@ -15,7 +15,6 @@ using Microsoft.Extensions.Configuration;
 using NHibernate;
 using NHibernate.Dialect;
 using NHibernate.Driver;
-using NHibernate.Extensions.NpgSql;
 using Shesha.Attributes;
 using Shesha.Bootstrappers;
 using Shesha.Configuration;
