@@ -9,9 +9,9 @@ namespace Shesha.Migrations.PostgreSql
     {
         public override void Up()
         {
-            Execute.EmbeddedScript("Shesha.Migrations.PostgreSql.InitialScripts.Core_DistanceTo.sql");
-            Execute.EmbeddedScript("Shesha.Migrations.PostgreSql.InitialScripts.Frwk_GetMultiValueRefListItemNames.sql");
-            Execute.EmbeddedScript("Shesha.Migrations.PostgreSql.InitialScripts.Frwk_GetRefListItem.sql");
+            Execute.EmbeddedScript("Shesha.IO.Migrations.PostgreSql.InitialScripts.Core_DistanceTo.sql");
+            Execute.EmbeddedScript("Shesha.IO.Migrations.PostgreSql.InitialScripts.Frwk_GetMultiValueRefListItemNames.sql");
+            Execute.EmbeddedScript("Shesha.IO.Migrations.PostgreSql.InitialScripts.Frwk_GetRefListItem.sql");
         }
     }
 }
