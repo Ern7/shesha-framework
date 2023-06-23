@@ -24,7 +24,8 @@ $projects = (
 	"Shesha.IO.Sms.BulkSms",
 	"Shesha.IO.Sms.Clickatell",
 	"Shesha.IO.Sms.SmsPortal",
-	"Shesha.IO.Sms.Xml2Sms"
+	"Shesha.IO.Sms.Xml2Sms",
+	"Shesha.IO.Web.FormsDesigner"
 )
 
 # Rebuild solution
