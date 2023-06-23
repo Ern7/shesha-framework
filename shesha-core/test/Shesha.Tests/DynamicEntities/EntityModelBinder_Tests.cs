@@ -8,7 +8,7 @@ using Shesha.Domain.Attributes;
 using Shesha.DynamicEntities;
 using Shesha.DynamicEntities.Binder;
 using Shesha.Metadata;
-using Shesha.NHibernate.UoW;
+using Shesha.IO.NHibernate.UoW;
 using Shesha.Services;
 using System;
 using System.Collections.Generic;

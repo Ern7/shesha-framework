@@ -1152,7 +1152,7 @@ namespace Shesha.Tests.JsonLogic
                     var titlesWithDisplayText = data.Select(e =>
                         {
                             var displayText = e.TypeOfAccount.HasValue
-                                ? refListHelper.GetItemDisplayText(new ReferenceListIdentifier("Shesha", "Shesha.Framework.TypeOfAccount"), (Int64)e.TypeOfAccount.Value)
+                                ? refListHelper.GetItemDisplayText(new ReferenceListIdentifier("Shesha", "Shesha.IO.Framework.TypeOfAccount"), (Int64)e.TypeOfAccount.Value)
                                 : null;
 
                             return new { 

@@ -1,4 +1,4 @@
-﻿using Shesha.NHibernate.UserTypes;
+﻿using Shesha.IO.NHibernate.UserTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

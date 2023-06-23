@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using NHibernate.Dialect;
 using NHibernate.Driver;
-using Shesha.NHibernate.Filters;
-using Shesha.NHibernate.Maps;
-using Shesha.NHibernate.Session;
-using Shesha.NHibernate.UserTypes;
+using Shesha.IO.NHibernate.Filters;
+using Shesha.IO.NHibernate.Maps;
+using Shesha.IO.NHibernate.Session;
+using Shesha.IO.NHibernate.UserTypes;
 using Shouldly;
 using System;
 using Xunit;

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Abp.Configuration;
 using Abp.Domain.Uow;
 using Shesha.Configuration;
-using Shesha.NHibernate.UoW;
+using Shesha.IO.NHibernate.UoW;
 using Shesha.Reflection;
 using Shesha.Services;
 using Shouldly;

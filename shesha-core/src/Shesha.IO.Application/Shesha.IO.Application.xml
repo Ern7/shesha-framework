@@ -1,0 +1,3399 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.Application</name>
+    </assembly>
+    <members>
+        <member name="T:Shesha.AbpAsyncCrudAppService`2">
+            <summary>
+            Async CRUD application service. Note: it's a copy of <see cref="T:Abp.Application.Services.AsyncCrudAppService`2"/>
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TEntityDto"></typeparam>
+        </member>
+        <member name="T:Shesha.AbpCrudAppService`6">
+            <summary>
+            NOTE: it's a copy of <see cref="T:Abp.Application.Services.CrudAppServiceBase`6"/>
+            This is a common base class for CrudAppService and AsyncCrudAppService classes.
+            Inherit either from CrudAppService or AsyncCrudAppService, not from this class.
+            </summary>
+        </member>
+        <member name="M:Shesha.AbpCrudAppService`6.ApplySorting(System.Linq.IQueryable{`0},`3)">
+            <summary>
+            Should apply sorting if needed.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="input">The input.</param>
+        </member>
+        <member name="M:Shesha.AbpCrudAppService`6.ApplyPaging(System.Linq.IQueryable{`0},`3)">
+            <summary>
+            Should apply paging if needed.
+            </summary>
+            <param name="query">The query.</param>
+            <param name="input">The input.</param>
+        </member>
+        <member name="M:Shesha.AbpCrudAppService`6.CreateFilteredQuery(`3)">
+            <summary>
+            This method should create <see cref="T:System.Linq.IQueryable`1"/> based on given input.
+            It should filter query if needed, but should not do sorting or paging.
+            Sorting should be done in <see cref="M:Shesha.AbpCrudAppService`6.ApplySorting(System.Linq.IQueryable{`0},`3)"/> and paging should be done in <see cref="M:Shesha.AbpCrudAppService`6.ApplyPaging(System.Linq.IQueryable{`0},`3)"/>
+            methods.
+            </summary>
+            <param name="input">The input.</param>
+        </member>
+        <member name="M:Shesha.AbpCrudAppService`6.MapToEntityDto(`0)">
+            <summary>
+            Maps <typeparamref name="TEntity"/> to <typeparamref name="TEntityDto"/>.
+            It uses <see cref="T:Abp.ObjectMapping.IObjectMapper"/> by default.
+            It can be overrided for custom mapping.
+            </summary>
+        </member>
+        <member name="M:Shesha.AbpCrudAppService`6.MapToEntity(`4)">
+            <summary>
+            Maps <typeparamref name="TEntityDto"/> to <typeparamref name="TEntity"/> to create a new entity.
+            It uses <see cref="T:Abp.ObjectMapping.IObjectMapper"/> by default.
+            It can be overrided for custom mapping.
+            </summary>
+        </member>
+        <member name="M:Shesha.AbpCrudAppService`6.MapToEntity(`5,`0)">
+            <summary>
+            Maps <typeparamref name="TUpdateInput"/> to <typeparamref name="TEntity"/> to update the entity.
+            It uses <see cref="T:Abp.ObjectMapping.IObjectMapper"/> by default.
+            It can be overrided for custom mapping.
+            </summary>
+        </member>
+        <member name="T:Shesha.Api.ApiAppService">
+            <summary>
+            API application service
+            </summary>
+        </member>
+        <member name="M:Shesha.Api.ApiQuery.AddFilter``1(System.Linq.IQueryable{``0},System.String)">
+            <summary>
+            Add filter to <paramref name="query"/>
+            </summary>
+            <param name="query">Queryable to be filtered</param>
+            <param name="filter">String representation of JsonLogic filter</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Api.ApiSchema">
+            <summary>
+            API schema
+            </summary>
+        </member>
+        <member name="T:Shesha.Api.Dto.ApiEndpointInfo">
+            <summary>
+            API endpoint info
+            </summary>
+        </member>
+        <member name="T:Shesha.Api.IApiAppService">
+            <summary>
+            API application service
+            </summary>
+        </member>
+        <member name="M:Shesha.Api.IApiAppService.GetEndpointsAsync">
+            <summary>
+            Get list of API endpoints
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Areas.AreaAppService.GetChildTreeItems(Shesha.Areas.Dto.GetChildAreasInput)">
+            <summary>
+            Returns child areas of the specified parent
+            </summary>
+        </member>
+        <member name="M:Shesha.Areas.AreaAppService.GetTreeItem(Abp.Application.Services.Dto.EntityDto{System.Guid})">
+            <summary>
+            Returns child areas of the specified parent
+            </summary>
+        </member>
+        <member name="M:Shesha.Areas.AreaAppService.DeleteChildAreas(Shesha.Domain.Area)">
+            <summary>
+            Deletes all child areas recursively
+            </summary>
+            <param name="area"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Areas.AreaAppService.MoveArea(Shesha.Areas.Dto.MoveAreaInput)">
+            <summary>
+            Moves Area to a new parent
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto">
+            <summary>
+            Authorization options
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.IsLockoutEnabled">
+            <summary>
+            Lockout enabled (default value for new users)
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.DefaultAccountLockoutSeconds">
+            <summary>
+            Lockout time in seconds
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.MaxFailedAccessAttemptsBeforeLockout">
+            <summary>
+            Max failed logon attempts before lockout
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.RequireDigit">
+            <summary>
+            Passwords: require digits
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.RequireLowercase">
+            <summary>
+            Passwords: require lower case character
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.RequireNonAlphanumeric">
+            <summary>
+            Passwords: non alphanumeric character
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.RequireUppercase">
+            <summary>
+            Passwords: require upper case character
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.RequiredLength">
+            <summary>
+            Passwords: min length
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.AutoLogoffTimeout">
+            <summary>
+            Auto logoff timeout (in case of user inactivity). Set to 0 to disable
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.ResetPasswordWithEmailLinkIsSupported">
+            <summary>
+            Allow users to reset passwords with reset link sent to their emails.
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.ResetPasswordWithEmailLinkExpiryDelay">
+            <summary>
+            Email link expiry delay
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.ResetPasswordWithSmsOtpIsSupported">
+            <summary>
+            Allow users to reset passwords using OTPs sent to their phone numbers.
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.ResetPasswordWithSmsOtpExpiryDelay">
+            <summary>
+            OTP expiry delay
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.ResetPasswordWithSecurityQuestionsIsSupported">
+            <summary>
+            Allow users to reset passwords using predefined security questions and answers.
+            </summary>
+        </member>
+        <member name="P:Shesha.Authorization.Settings.Dto.AuthorizationSettingsDto.ResetPasswordWithSecurityQuestionsNumQuestionsAllowed">
+            <summary>
+            TODO: Decide whether to use this property or not
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.ConfigurationItemAppService">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.ExportPackageAsync(Shesha.ConfigurationItems.Dtos.PackageExportInput)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.ImportPackageAsync(Shesha.ConfigurationItems.Dtos.PackageImportInput)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.ClearClientSideCache">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.UpdateStatus(Shesha.ConfigurationItems.Dtos.UpdateItemStatusInput)">
+            <summary>
+            Update form status
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.CopyAsync(Shesha.ConfigurationItems.Models.CopyItemInput)">
+            <summary>
+            Copy configuration item
+            </summary>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.CancelVersion(Shesha.ConfigurationItems.Models.CancelItemVersionInput)">
+            <summary>
+            Cancel version
+            </summary>
+            <exception cref="T:Abp.Runtime.Validation.AbpValidationException"></exception>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.MoveToModuleAsync(Shesha.ConfigurationItems.Models.MoveItemToModuleInput)">
+            <summary>
+            Move form to another module
+            </summary>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.CreateNewVersion(Shesha.ConfigurationItems.Models.CreateItemNewVersionInput)">
+            <summary>
+            Create new version of form configuration
+            </summary>
+            <exception cref="T:Abp.Runtime.Validation.AbpValidationException"></exception>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.ConfigurationItemAppService.DeleteAsync(Abp.Application.Services.Dto.EntityDto{System.Guid})">
+            <summary>
+            Delete form
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.Dtos.AnalyzePackageInput">
+            <summary>
+            Arguments of the package analyze
+            </summary>
+        </member>
+        <member name="P:Shesha.ConfigurationItems.Dtos.AnalyzePackageInput.File">
+            <summary>
+            File content
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.Dtos.AnalyzePackageResult">
+            <summary>
+            Results of package analyze
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.Dtos.PackageItemDto">
+            <summary>
+            Package item DTO
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.Dtos.PackageExportInput">
+            <summary>
+            Arguments of the configuration items export
+            </summary>
+        </member>
+        <member name="P:Shesha.ConfigurationItems.Dtos.PackageExportInput.Filter">
+            <summary>
+            Filter string in JsonLogic format. Is used to define a list of items to export
+            </summary>
+        </member>
+        <member name="P:Shesha.ConfigurationItems.Dtos.PackageExportInput.VersionSelectionMode">
+            <summary>
+            Mode of the version selection (live/ready/latest)
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.Dtos.PackageImportInput">
+            <summary>
+            Arguments of the configuration items import
+            </summary>
+        </member>
+        <member name="P:Shesha.ConfigurationItems.Dtos.PackageImportInput.File">
+            <summary>
+            File content
+            </summary>
+        </member>
+        <member name="P:Shesha.ConfigurationItems.Dtos.PackageImportInput.ItemsToImport">
+            <summary>
+            List of items to import
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.Dtos.PackageImportResult">
+            <summary>
+            Results of configuration items import
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.Dtos.UpdateItemStatusInput">
+            <summary>
+            Update configuration status import
+            </summary>
+        </member>
+        <member name="P:Shesha.ConfigurationItems.Dtos.UpdateItemStatusInput.Filter">
+            <summary>
+            Filter string in JsonLogic format
+            </summary>
+        </member>
+        <member name="P:Shesha.ConfigurationItems.Dtos.UpdateItemStatusInput.Status">
+            <summary>
+            New status
+            </summary>
+        </member>
+        <member name="T:Shesha.ConfigurationItems.IConfigurationItemAppService">
+            <summary>
+            Configuration item application service. Performs base operations on the configuration items
+            </summary>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.IConfigurationItemAppService.ExportPackageAsync(Shesha.ConfigurationItems.Dtos.PackageExportInput)">
+            <summary>
+            Import configuration items
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.IConfigurationItemAppService.ImportPackageAsync(Shesha.ConfigurationItems.Dtos.PackageImportInput)">
+            <summary>
+            Export configuration items
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.IConfigurationItemAppService.AnalyzePackageAsync(Shesha.ConfigurationItems.Dtos.AnalyzePackageInput)">
+            <summary>
+            Analyze zip package an get summary
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.ConfigurationItems.IConfigurationItemAppService.ClearClientSideCache">
+            <summary>
+            Clean client side cache
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.DeviceForceUpdate.Dto.DeviceForceUpdateDto">
+            <summary>
+            Registered mobile device DTO
+            </summary>
+        </member>
+        <member name="T:Shesha.DeviceRegistrations.Dto.DeviceRegistrationDto">
+            <summary>
+            Registered mobile device DTO
+            </summary>
+        </member>
+        <member name="T:Shesha.DeviceRegistrations.Dto.DeviceRegistrationInput">
+            <summary>
+            Registered mobile device DTO
+            </summary>
+        </member>
+        <member name="M:Shesha.DynamicCrudAppService`3.UpdateGqlAsync(System.String,`1)">
+            <summary>
+            Update entity data. 
+            NOTE: don't use on prod, will be merged with the `Update`endpoint soon
+            </summary>
+            <param name="properties">List of properties to fetch in GraphQL-like syntax. Supports nested properties</param>
+            <param name="input"></param>
+            <returns></returns>
+            <response code="200">NOTE: shape of the `result` depends on the `properties` argument. When `properties` argument is not specified - it returns top level properties of the entity, all referenced entities are presented as their Id values</response>
+        </member>
+        <member name="M:Shesha.DynamicCrudAppService`3.CreateGqlAsync(System.String,`1)">
+            <summary>
+            Create entity.
+            NOTE: don't use on prod, will be merged with the `Update`endpoint soon
+            </summary>
+            <param name="properties">List of properties to fetch in GraphQL-like syntax. Supports nested properties</param>
+            <param name="input"></param>
+            <returns></returns>
+            <response code="200">NOTE: shape of the `result` depends on the `properties` argument. When `properties` argument is not specified - it returns top level properties of the entity, all referenced entities are presented as their Id values</response>
+        </member>
+        <member name="T:Shesha.DynamicEntities.Dtos.SpecificationDto">
+            <summary>
+            DTO of the specification that can be applied on top of the entity query
+            </summary>
+        </member>
+        <member name="P:Shesha.DynamicEntities.Dtos.SpecificationDto.Name">
+            <summary>
+            Name. Unique for all specifications in the application
+            </summary>
+        </member>
+        <member name="P:Shesha.DynamicEntities.Dtos.SpecificationDto.FriendlyName">
+            <summary>
+            Friendly name
+            </summary>
+        </member>
+        <member name="P:Shesha.DynamicEntities.Dtos.SpecificationDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.DynamicAppServiceHelper">
+            <summary>
+            Dynamic application service helper
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.DynamicControllerRouteConvention">
+            <summary>
+            Dynamic controller route convention
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.DynamicDtoBinderProvider">
+            <summary>
+            Dynamic DTO binder provider
+            </summary>
+        </member>
+        <member name="M:Shesha.DynamicEntities.DynamicDtoBinderProvider.#ctor(System.Collections.Generic.IList{Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter},Microsoft.AspNetCore.Mvc.Infrastructure.IHttpRequestStreamReaderFactory,Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.AspNetCore.Mvc.MvcOptions,Shesha.DynamicEntities.IDynamicDtoTypeBuilder)">
+            <summary>
+            Creates a new <see cref="T:Shesha.DynamicEntities.DynamicDtoBinderProvider"/>.
+            </summary>
+            <param name="formatters">The list of <see cref="T:Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter"/>.</param>
+            <param name="readerFactory">The <see cref="T:Microsoft.AspNetCore.Mvc.Infrastructure.IHttpRequestStreamReaderFactory"/>.</param>
+            <param name="loggerFactory">The <see cref="T:Microsoft.Extensions.Logging.ILoggerFactory"/>.</param>
+            <param name="options">The <see cref="T:Microsoft.AspNetCore.Mvc.MvcOptions"/>.</param>
+            <param name="dtoBuilder"></param>
+        </member>
+        <member name="M:Shesha.DynamicEntities.DynamicDtoBinderProvider.GetBinder(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Shesha.DynamicEntities.DynamicDtoModelBinder">
+            <summary>
+            Model Binder that binds dynamic DTOs
+            It creates proxy types with dynamic properties according to the entity configuration
+            </summary>
+        </member>
+        <member name="M:Shesha.DynamicEntities.DynamicDtoModelBinder.#ctor(System.Collections.Generic.IList{Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter},Microsoft.AspNetCore.Mvc.Infrastructure.IHttpRequestStreamReaderFactory,Microsoft.Extensions.Logging.ILoggerFactory,Shesha.DynamicEntities.IDynamicDtoTypeBuilder)">
+            <summary>
+            Creates a new <see cref="T:Shesha.DynamicEntities.DynamicDtoModelBinder"/>.
+            </summary>
+            <param name="formatters">The list of <see cref="T:Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter"/>.</param>
+            <param name="readerFactory">
+            The <see cref="T:Microsoft.AspNetCore.Mvc.Infrastructure.IHttpRequestStreamReaderFactory"/>, used to create <see cref="T:System.IO.TextReader"/>
+            instances for reading the request body.
+            </param>
+            <param name="loggerFactory">The <see cref="T:Microsoft.Extensions.Logging.ILoggerFactory"/>.</param>
+            <param name="dynamicDtoTypeBuilder">Dynamic DTO builder</param>
+        </member>
+        <member name="M:Shesha.DynamicEntities.DynamicDtoModelBinder.#ctor(System.Collections.Generic.IList{Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter},Microsoft.AspNetCore.Mvc.Infrastructure.IHttpRequestStreamReaderFactory,Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.AspNetCore.Mvc.MvcOptions,Shesha.DynamicEntities.IDynamicDtoTypeBuilder)">
+            <summary>
+            Creates a new <see cref="T:Shesha.DynamicEntities.DynamicDtoModelBinder"/>.
+            </summary>
+            <param name="formatters">The list of <see cref="T:Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter"/>.</param>
+            <param name="readerFactory">
+            The <see cref="T:Microsoft.AspNetCore.Mvc.Infrastructure.IHttpRequestStreamReaderFactory"/>, used to create <see cref="T:System.IO.TextReader"/>
+            instances for reading the request body.
+            </param>
+            <param name="loggerFactory">The <see cref="T:Microsoft.Extensions.Logging.ILoggerFactory"/>.</param>
+            <param name="options">The <see cref="T:Microsoft.AspNetCore.Mvc.MvcOptions"/>.</param>
+            <param name="dynamicDtoTypeBuilder">Dynamic DTO builder</param>
+        </member>
+        <member name="M:Shesha.DynamicEntities.DynamicDtoModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Shesha.DynamicEntities.DynamicEntityControllerFeatureProvider">
+            <summary>
+            Controller provider that generates dynamic applicaiton services (controllers) for registered entities
+            </summary>
+        </member>
+        <member name="M:Shesha.DynamicEntities.EntitiesAppService.SpecificationsAsync(System.String)">
+            <summary>
+            Get specifications available for the specified entityType
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.DynamicEntities.EntityPropertyAppService">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.DynamicEntities.IEntityActionRouteProvider">
+            <summary>
+            Entity action route provider
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.IEntityConfigAppService">
+            <summary>
+            Entity config application service. Allows to configure domain model
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.IEntityPropertyAppService">
+            <summary>
+            Entity property application service. Allows to configure domain model
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.ModelConfigurationsAppService">
+            <summary>
+            Model Configurations application service
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.MvcCoreLoggerExtensions">
+            <summary>
+            Copied from Microsoft.AspNetCore.Mvc.MvcCoreLoggerExtensions to keep the same logging and 
+            </summary>
+        </member>
+        <member name="T:Shesha.DynamicEntities.MvcOptionsExtensions">
+            <summary>
+            MvcOptions extensions
+            </summary>
+        </member>
+        <member name="M:Shesha.DynamicEntities.MvcOptionsExtensions.EnableDynamicDtoBinding(Microsoft.AspNetCore.Mvc.MvcOptions)">
+            <summary>
+            Enable binding of the <see cref="T:Shesha.DynamicEntities.Dtos.DynamicDto`2"/>
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:Shesha.DynamicEntities.SheshaActionDescriptorChangeProvider">
+            <summary>
+            ASP.Net Core register Controller at runtime
+            https://stackoverflow.com/questions/46156649/asp-net-core-register-controller-at-runtime
+            </summary>
+        </member>
+        <member name="T:Shesha.Email.Dtos.EmailAttachment">
+            <summary>
+            Email attachment
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.Dtos.EmailSettingsInput.DefaultFromAddress">
+            <summary>
+            Default from address.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.Dtos.EmailSettingsInput.DefaultFromDisplayName">
+            <summary>
+            Default display name.
+            </summary>
+        </member>
+        <member name="T:Shesha.Email.Dtos.SendTestEmailDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.Host">
+            <summary>
+            SMTP Host name/IP.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.Port">
+            <summary>
+            SMTP Port.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.UserName">
+            <summary>
+            User name to login to SMTP server.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.Password">
+            <summary>
+            Password to login to SMTP server.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.Domain">
+            <summary>
+            Domain name to login to SMTP server.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.EnableSsl">
+            <summary>
+            Is SSL enabled?
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.DefaultFromAddress">
+            <summary>
+            Default from address.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.DefaultFromDisplayName">
+            <summary>
+            Default display name.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.SupportSmtpRelay">
+            <summary>
+            If true, indicate that SMTP relay service will be used where it's needed (e.g. if the application needs to notify one person about the action that was performed by another person then real person's email address will be used for the "from" address, otherwise "Site Email" will be used)
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.RedirectAllMessagesTo">
+            <summary>
+            If not null or empty the all outgoing emails will be sent to this email address, is used for testing
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpSettingsDto.EmailsEnabled">
+            <summary>
+            If true, all emails will be disabled. Is used only for testing
+            </summary>
+        </member>
+        <member name="T:Shesha.Email.EmailImagesHelper">
+            <summary>
+            inheritedDoc
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.EmailImagesHelper.PrepareImages(System.Net.Mail.MailMessage)">
+            <summary>
+            inheritedDoc
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.EmailImagesHelper.LocalImagesToEmbedded(System.String)">
+            <summary>
+            inheritedDoc
+            </summary>
+        </member>
+        <member name="T:Shesha.Email.EmailSenderAppService">
+            <summary>
+            Email Sender Application Service
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.EmailSenderAppService.#ctor(Shesha.Configuration.IEmailSettings,Abp.Net.Mail.IEmailSender)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.EmailSenderAppService.UpdateSmtpSettingsAsync(Shesha.Email.SmtpSettingsDto)">
+            inheritDoc
+        </member>
+        <member name="M:Shesha.Email.EmailSenderAppService.GetSmtpSettingsAsync">
+            inheritDoc
+        </member>
+        <member name="M:Shesha.Email.EmailSenderAppService.SendEmail(Shesha.Email.SendTestEmailInput)">
+            inheritDoc
+        </member>
+        <member name="T:Shesha.Email.IEmailImagesHelper">
+            <summary>
+            Helper for preprocessing images in the email messages
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.IEmailImagesHelper.PrepareImages(System.Net.Mail.MailMessage)">
+            <summary>
+            Prepares images in the specified <paramref name="message"/>
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.IEmailImagesHelper.LocalImagesToEmbedded(System.String)">
+            <summary>
+            Convert local images to Base64 embedded images. Is used for conversion of html to use in email messages. 
+            </summary>
+        </member>
+        <member name="T:Shesha.Email.IEmailSenderAppService">
+            <summary>
+            Email Sender Application Service
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.IEmailSenderAppService.UpdateSmtpSettingsAsync(Shesha.Email.SmtpSettingsDto)">
+            <summary>
+            Updates current SMTP settings
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.IEmailSenderAppService.GetSmtpSettingsAsync">
+            <summary>
+            Returns current SMTP settings
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.IEmailSenderAppService.SendEmail(Shesha.Email.SendTestEmailInput)">
+            <summary>
+            Sends email with a specified parameters
+            </summary>
+        </member>
+        <member name="T:Shesha.Email.ISheshaEmailSender">
+            <summary>
+            Used to compose and send emails via SMTP
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.ISheshaEmailSender.SendMail(System.String,System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List{Shesha.Email.Dtos.EmailAttachment},System.String,System.Boolean)">
+            <summary>
+            Compose and send email with attachments
+            </summary>
+        </member>
+        <member name="M:Shesha.Email.SheshaEmailSender.PrepareAndCheckMail(System.Net.Mail.MailMessage,Shesha.Configuration.SmtpSettings)">
+            <summary>
+            Prepare mail and return true if it should be sent, otherwise - false
+            </summary>
+            <param name="mail">Mail to prepare</param>
+            <param name="smtpSettings">SMPT settings</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Email.SheshaEmailSender.GetSmtpClient(Shesha.Configuration.SmtpSettings)">
+            <summary>
+            Returns SmtpClient configured according to the current application settings
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.AbpSession">
+            <summary>
+            Reference to the current Session.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.Host">
+            <summary>
+            SMTP Host name/IP.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.Port">
+            <summary>
+            SMTP Port.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.UserName">
+            <summary>
+            User name to login to SMTP server.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.Password">
+            <summary>
+            Password to login to SMTP server.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.Domain">
+            <summary>
+            Domain name to login to SMTP server.
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.EnableSsl">
+            <summary>
+            Is SSL enabled?
+            </summary>
+        </member>
+        <member name="P:Shesha.Email.SmtpEmailSenderSettings.UseDefaultCredentials">
+            <summary>
+            Use default credentials?
+            </summary>
+        </member>
+        <member name="T:Shesha.EntityHistory.EntityHistoryAppService">
+            <summary>
+            Entity history application service
+            </summary>
+        </member>
+        <member name="M:Shesha.Excel.ExcelUtility.SetSheetName(System.String,DocumentFormat.OpenXml.Packaging.SpreadsheetDocument)">
+            <summary>
+            Set the name of the spreadsheet. 
+            </summary>
+        </member>
+        <member name="M:Shesha.Excel.ExcelUtility.SetStyleSheet(DocumentFormat.OpenXml.Packaging.SpreadsheetDocument)">
+            <summary>
+            Set the style sheet
+            </summary>
+        </member>
+        <member name="M:Shesha.Excel.ExcelUtility.AddCellWidthStyles(System.UInt32,System.UInt32,System.Int32,DocumentFormat.OpenXml.Packaging.SpreadsheetDocument,DocumentFormat.OpenXml.Packaging.WorksheetPart)">
+            <summary>
+            Add cell width styles. 
+            </summary>
+            <param name="minCol">Minimum column index.</param>
+            <param name="maxCol">Maximum column index.</param>
+            <param name="maxWidth">Maximum column width.</param>
+            <param name="spreadSheet">Spread sheet.</param>
+            <param name="workSheetPart">Work sheet.</param>
+        </member>
+        <member name="T:Shesha.Excel.ExportToExcelInput">
+            <summary>
+            Export to excel input
+            </summary>
+        </member>
+        <member name="T:Shesha.Excel.ExcelColumn">
+            <summary>
+            list of excel columns
+            </summary>
+        </member>
+        <member name="T:Shesha.Excel.IExcelUtility">
+            <summary>
+            Excel utility
+            </summary>
+        </member>
+        <member name="M:Shesha.Excel.IExcelUtility.ReadToExcelStreamAsync(System.Type,System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.Object}},System.Collections.Generic.IList{Shesha.Excel.ExcelColumn},System.String)">
+            <summary>
+            Read data to excel stream
+            </summary>
+            <param name="rowType"></param>
+            <param name="list"></param>
+            <param name="columns"></param>
+            <param name="sheetName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IHomePageRouter">
+            <summary>
+            Interface for a class used to determine which page a user should be directed
+            to by default straight after successfully loging in.
+            </summary>
+        </member>
+        <member name="T:Shesha.Maintenance.MaintenanceAppService">
+            <summary>
+            Maintenance service
+            </summary>
+        </member>
+        <member name="M:Shesha.Maintenance.MaintenanceAppService.BackupDB(System.String)">
+            <summary>
+            Backup DB
+            </summary>
+            <param name="fileName">Filename of DB backup</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Metadata.Dtos.ApiEndpointDto">
+            <summary>
+            API endpoint DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.Metadata.Dtos.ApiEndpointDto.HttpVerb">
+            <summary>
+            Http verb (get/post/put etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.Metadata.Dtos.ApiEndpointDto.Url">
+            <summary>
+            Url
+            </summary>
+        </member>
+        <member name="T:Shesha.Metadata.Dtos.MetadataDto">
+            <summary>
+            Metadata DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.Metadata.Dtos.MetadataDto.DataType">
+            <summary>
+            Data type
+            </summary>
+        </member>
+        <member name="P:Shesha.Metadata.Dtos.MetadataDto.Properties">
+            <summary>
+            Propeties
+            </summary>
+        </member>
+        <member name="P:Shesha.Metadata.Dtos.MetadataDto.Specifications">
+            <summary>
+            Specifications, applicable for entities
+            </summary>
+        </member>
+        <member name="P:Shesha.Metadata.Dtos.MetadataDto.ApiEndpoints">
+            <summary>
+            Default API endpoints. 
+            key - operation name (create/read/update/delete etc.)
+            value - endpoint DTO (url and http verb)
+            </summary>
+        </member>
+        <member name="T:Shesha.Metadata.Exceptions.DuplicateModelsException">
+            <summary>
+            Duplicate models exception
+            </summary>
+        </member>
+        <member name="T:Shesha.Metadata.IMetadataAppService">
+            <summary>
+            Metadata application service. Provides metadata of entities, DTOs etc
+            </summary>
+        </member>
+        <member name="M:Shesha.Metadata.IMetadataAppService.EntityTypeAutocompleteAsync(System.String,System.String)">
+            <summary>
+            Autocomplete of entity types
+            </summary>
+            <param name="term">Term to search</param>
+            <param name="selectedValue">Selected value, is used to fetch user-friendly name of selected item</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Metadata.IMetadataAppService.PropertyAutocompleteAsync(System.String,System.String,System.String)">
+            <summary>
+            Autocomplete of container's properties
+            </summary>
+            <param name="term">Term to search</param>
+            <param name="container">Container (e.g. entity type)</param>
+            <param name="selectedValue">Selected value, is used to fetch user-friendly name of selected item</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Metadata.IMetadataAppService.GetPropertiesAsync(System.String)">
+            <summary>
+            Get properties of the specified container
+            </summary>
+        </member>
+        <member name="M:Shesha.Metadata.IMetadataAppService.GetAsync(System.String)">
+            <summary>
+            Get full metadata of the specified container
+            </summary>
+        </member>
+        <member name="T:Shesha.Metadata.MetadataAppService">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Metadata.MetadataAppService.EntityTypeAutocompleteAsync(System.String,System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Metadata.MetadataAppService.PropertyAutocompleteAsync(System.String,System.String,System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Metadata.MetadataAppService.GetPropertiesAsync(System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Metadata.MetadataAppService.GetAsync(System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Metadata.MetadataAppService.SpecificationsAsync(System.String)">
+            <summary>
+            Get specifications available for the specified entityType
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.MobileDevices.MobileDeviceDto">
+            <summary>
+            Registered mobile device DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.MobileDevices.MobileDeviceDto.Name">
+            <summary>
+            Device name
+            </summary>
+        </member>
+        <member name="P:Shesha.MobileDevices.MobileDeviceDto.ReadRouteName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.MobileDevices.MobileDeviceDto.IMEI">
+            <summary>
+            Device IMEI number
+            </summary>
+        </member>
+        <member name="P:Shesha.MobileDevices.MobileDeviceDto.IsLocked">
+            <summary>
+            Indicates that the device is locked
+            </summary>
+        </member>
+        <member name="T:Shesha.Net.MimeTypes.MimeTypeNames">
+            <summary>
+            Common mime types. 
+            </summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXJavascript">
+            <summary>Used to denote the encoding necessary for files containing JavaScript source code. The alternative MIME type for this file type is text/javascript.</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioL24">
+            <summary>24bit Linear PCM audio at 8-48kHz, 1-N channels; Defined in RFC 3190</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXShockwaveFlash">
+            <summary>Adobe Flash files for example with the extension .swf</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationOctetStream">
+            <summary>Arbitrary binary data.[5] Generally speaking this type identifies files that are not associated with a specific application. Contrary to past assumptions by software packages such as Apache this is not a type that should be applied to unknown files. In such a case, a server or application should not indicate a content type, as it may be incorrect, but rather, should omit the type in order to allow the recipient to guess the type.[6]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationAtomXml">
+            <summary>Atom feeds</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextCss">
+            <summary>Cascading Style Sheets; Defined in RFC 2318</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextCmd">
+            <summary>commands; subtype resident in Gecko browsers like Firefox 3.5</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextCsv">
+            <summary>Comma-separated values; Defined in RFC 4180</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXDeb">
+            <summary>deb (file format), a software package format used by the Debian project</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MultipartEncrypted">
+            <summary>Defined in RFC 1847</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MultipartSigned">
+            <summary>Defined in RFC 1847</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MessageHttp">
+            <summary>Defined in RFC 2616</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ModelExample">
+            <summary>Defined in RFC 4735</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXDvi">
+            <summary>device-independent document in DVI format</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXmlDtd">
+            <summary>DTD files; Defined by RFC 3023</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationJavascript">
+            <summary>ECMAScript/JavaScript; Defined in RFC 4329 (equivalent to application/ecmascript but with looser processing rules) It is not accepted in IE 8 or earlier - text/javascript is accepted but it is defined as obsolete in RFC 4329. The "type" attribute of the &lt;script&gt; tag in HTML5 is optional and in practice omitting the media type of JavaScript programs is the most interoperable solution since all browsers have always assumed the correct default even before HTML5.</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationEcmascript">
+            <summary>ECMAScript/JavaScript; Defined in RFC 4329 (equivalent to application/javascript but with stricter processing rules)</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationEdifact">
+            <summary>EDI EDIFACT data; Defined in RFC 1767</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationEdiX12">
+            <summary>EDI X12 data; Defined in RFC 1767</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MessagePartial">
+            <summary>Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MessageRfc822">
+            <summary>Email; EML files, MIME files, MHT files, MHTML files; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextXml">
+            <summary>Extensible Markup Language; Defined in RFC 3023</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoXFlv">
+            <summary>Flash video (FLV files)</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ImageGif">
+            <summary>GIF image; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextXGwtRpc">
+            <summary>GoogleWebToolkit data</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXGzip">
+            <summary>Gzip</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextHtml">
+            <summary>HTML; Defined in RFC 2854</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ImageVndMicrosoftIcon">
+            <summary>ICO image; Registered[9]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ModelIges">
+            <summary>IGS files, IGES files; Defined in RFC 2077</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MessageImdnXml">
+            <summary>IMDN Instant Message Disposition Notification; Defined in RFC 5438</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationJson">
+            <summary>JavaScript Object Notation JSON; Defined in RFC 4627</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationJsonPatch">
+            <summary>JavaScript Object Notation (JSON) Patch; Defined in RFC 6902</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextJavascript">
+            <summary>JavaScript - Defined in and obsoleted by RFC 4329 in order to discourage its usage in favor of application/javascript. However,text/javascript is allowed in HTML 4 and 5 and, unlike application/javascript, has cross-browser support. The "type" attribute of the &lt;script&gt; tag in HTML5 is optional and there is no need to use it at all since all browsers have always assumed the correct default (even in HTML 4 where it was required by the specification).</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ImagePjpeg">
+            <summary>JPEG JFIF image; Associated with Internet Explorer; Listed in ms775147(v=vs.85) - Progressive JPEG, initiated before global browser support for progressive JPEGs (Microsoft and Firefox).</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ImageJpeg">
+            <summary>JPEG JFIF image; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextXJqueryTmpl">
+            <summary>jQuery template data</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndGoogleEarthKmlXml">
+            <summary>KML files (e.g. for Google Earth)</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXLatex">
+            <summary>LaTeX files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoXMatroska">
+            <summary>Matroska open media format</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentSpreadsheetmlSheet">
+            <summary>Microsoft Excel 2007 files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndMsExcel">
+            <summary>Microsoft Excel files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentPresentationmlPresentation">
+            <summary>Microsoft Powerpoint 2007 files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndMsPowerpoint">
+            <summary>Microsoft Powerpoint files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndOpenxmlformatsOfficedocumentWordprocessingmlDocument">
+            <summary>Microsoft Word 2007 files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationMsword">
+            <summary>Microsoft Word files[15]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MultipartAlternative">
+            <summary>MIME Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MultipartMixed">
+            <summary>MIME Email; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MultipartRelated">
+            <summary>MIME Email; Defined in RFC 2387 and used by MHTML (HTML mail)</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.MultipartFormData">
+            <summary>MIME Webform; Defined in RFC 2388</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndMozillaXulXml">
+            <summary>Mozilla XUL files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioMpeg">
+            <summary>MP3 or other MPEG audio; Defined in RFC 3003</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioMp4">
+            <summary>MP4 audio</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoMp4">
+            <summary>MP4 video; Defined in RFC 4337</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoMpeg">
+            <summary>MPEG-1 video with multiplexed audio; Defined in RFC 2045 and RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ModelMesh">
+            <summary>MSH files, MESH files; Defined in RFC 2077, SILO files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioBasic">
+            <summary>mulaw audio at 8 kHz, 1 channel; Defined in RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoOgg">
+            <summary>Ogg Theora or other video (with audio); Defined in RFC 5334</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioOgg">
+            <summary>Ogg Vorbis, Speex, Flac and other audio; Defined in RFC 5334</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationOgg">
+            <summary>Ogg, a multimedia bitstream container format; Defined in RFC 5334</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXopXml">
+            <summary>OP</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentGraphics">
+            <summary>OpenDocument Graphics; Registered[14]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentPresentation">
+            <summary>OpenDocument Presentation; Registered[13]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentSpreadsheet">
+            <summary>OpenDocument Spreadsheet; Registered[12]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationVndOasisOpendocumentText">
+            <summary>OpenDocument Text; Registered[11]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs12">
+            <summary>p12 files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Certificates">
+            <summary>p7b and spc files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Mime">
+            <summary>p7c files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Certreqresp">
+            <summary>p7r files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXPkcs7Signature">
+            <summary>p7s files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationPdf">
+            <summary>Portable Document Format, PDF has been in use for document exchange on the Internet since 1993; Defined in RFC 3778</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ImagePng">
+            <summary>Portable Network Graphics; Registered,[8] Defined in RFC 2083</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationPostscript">
+            <summary>PostScript; Defined in RFC 2046</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoQuicktime">
+            <summary>QuickTime video; Registered[10]</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXRarCompressed">
+            <summary>RAR archive files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioVndRnRealaudio">
+            <summary>RealAudio; Documented in RealPlayer Customer Support Answer 2559</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationRdfXml">
+            <summary>Resource Description Framework; Defined by RFC 3870</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationRssXml">
+            <summary>RSS feeds</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationSoapXml">
+            <summary>SOAP; Defined by RFC 3902</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXStuffit">
+            <summary>StuffIt archive files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ImageSvgXml">
+            <summary>SVG vector image; Defined in SVG Tiny 1.2 Specification Appendix M</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ImageTiff">
+            <summary>Tag Image File Format (only for Baseline TIFF); Defined in RFC 3302</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXTar">
+            <summary>Tarball files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextPlain">
+            <summary>Textual data; Defined in RFC 2046 and RFC 3676</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXFontTtf">
+            <summary>TrueType Font No registered MIME type, but this is the most commonly used</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.TextVcard">
+            <summary>vCard (contact information); Defined in RFC 6350</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioVorbis">
+            <summary>Vorbis encoded audio; Defined in RFC 5215</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioVndWave">
+            <summary>WAV audio; Defined in RFC 2361</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationFontWoff">
+            <summary>Web Open Font Format; (candidate recommendation; use application/x-font-woff until standard is official)</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoWebm">
+            <summary>WebM Matroska-based open media format</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioWebm">
+            <summary>WebM open media format</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioXMsWax">
+            <summary>Windows Media Audio Redirector; Documented in Microsoft help page</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.AudioXMsWma">
+            <summary>Windows Media Audio; Documented in Microsoft KB 288102</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.VideoXMsWmv">
+            <summary>Windows Media Video; Documented in Microsoft KB 288102</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ModelVrml">
+            <summary>WRL files, VRML files; Defined in RFC 2077</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ModelX3DXml">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3D XML files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ModelX3DBinary">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3DB binary files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ModelX3DVrml">
+            <summary>X3D ISO standard for representing 3D computer graphics, X3DV VRML files</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationXhtmlXml">
+            <summary>XHTML; Defined by RFC 3236</summary>
+        </member>
+        <member name="F:Shesha.Net.MimeTypes.MimeTypeNames.ApplicationZip">
+            <summary>ZIP archive files; Registered[7]</summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.CreateNoteDto.OwnerId">
+            <summary>
+            Id of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.CreateNoteDto.OwnerType">
+            <summary>
+            Type short alias of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.CreateNoteDto.Category">
+            <summary>
+            Category of the note. Is used to split notes into groups
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.CreateNoteDto.Priority">
+            <summary>
+            Note importance (priority)
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.CreateNoteDto.ParentId">
+            <summary>
+            Id of the parent note
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.CreateNoteDto.NoteText">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.GetListInput.OwnerId">
+            <summary>
+            Id of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.GetListInput.OwnerType">
+            <summary>
+            Type short alias of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.GetListInput.Category">
+            <summary>
+            Category of the note. Is used to split notes into groups
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.GetListInput.AllCategories">
+            <summary>
+            Set to true to get notes of all categories
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.NoteDto.OwnerId">
+            <summary>
+            Id of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.NoteDto.OwnerType">
+            <summary>
+            Type short alias of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.NoteDto.CreationTime">
+            <summary>
+            Creation time
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.NoteDto.Category">
+            <summary>
+            Category of the note. Is used to split notes into groups
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.NoteDto.Priority">
+            <summary>
+            Note importance (priority)
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.NoteDto.ParentId">
+            <summary>
+            Id of the parent note
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.NoteDto.NoteText">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.UpdateNoteDto.Category">
+            <summary>
+            Category of the note. Is used to split notes into groups
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.UpdateNoteDto.Priority">
+            <summary>
+            Note importance (priority)
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.UpdateNoteDto.ParentId">
+            <summary>
+            Id of the parent note
+            </summary>
+        </member>
+        <member name="P:Shesha.Notes.Dto.UpdateNoteDto.NoteText">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="M:Shesha.Notes.NoteAppService.GetListAsync(Shesha.Notes.Dto.GetListInput)">
+            <summary>
+            Get notes
+            </summary>
+        </member>
+        <member name="M:Shesha.Notes.NoteAppService.CreateAsync(Shesha.Notes.Dto.CreateNoteDto)">
+            inheritedDoc
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Sender">
+            <summary>
+            Person who sent this message
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Recipient">
+            <summary>
+            Recipient (person) of the message
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.SendType">
+            <summary>
+            Send type (email/sms/push etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.RecipientText">
+            <summary>
+            Recipient text (email address/mobile number etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Subject">
+            <summary>
+            Subject of the message
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Body">
+            <summary>
+            Message body
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Template">
+            <summary>
+            Template that was used for message generation
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Notification">
+            <summary>
+            Notification
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Attachments">
+            <summary>
+            Attachments
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.SendDate">
+            <summary>
+            Date and time of last attempt to send the message
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.TryCount">
+            <summary>
+            Number of attempt to send the message
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.Status">
+            <summary>
+            Status (outgoing/sent/failed etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.NotificationMessages.Dto.NotificationMessageDto.ErrorMessage">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="T:Shesha.NotificationMessages.NotificationMessageAppService">
+            <summary>
+            Notifications audit service
+            </summary>
+        </member>
+        <member name="M:Shesha.NotificationMessages.NotificationMessageAppService.Resend(System.Guid)">
+            <summary>
+            Resend notification message with specified <paramref name="id"/>
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Notifications.Dto.NotificationAttachmentDto">
+            <summary>
+            Notification Attachment Dto
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.Dto.NotificationAttachmentDto.FileName">
+            <summary>
+            File name
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.Dto.NotificationAttachmentDto.StoredFileId">
+            <summary>
+            Id of the stored file
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.Dto.ShaNotificationData">
+            <summary>
+            Is used to store template based notification data
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.Dto.ShaNotificationData.TemplateId">
+            <summary>
+            Template Id
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.Dto.ShaNotificationData.Attachments">
+            <summary>
+            Attachments
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.Dto.ShaNotificationData.SendType">
+            <summary>
+            Send type (email/sms/push etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.Dto.ShaNotificationData.RecipientText">
+            <summary>
+            Recipient text (email address/mobile number etc)
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.Dto.ShaNotificationData.#ctor">
+            <summary>
+            Default constructor. Note: important for deserialization
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.EmailRealTimeNotifier">
+            <summary>
+            Email notifier
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.EmailRealTimeNotifier.NotificationType">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.EmailRealTimeNotifier.SendNotificationsAsync(Abp.Notifications.UserNotification[])">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.EmailRealTimeNotifier.DoSendNotificationMessageAsync(Shesha.Domain.NotificationMessage)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.EmailRealTimeNotifier.SendNotificationsAsync(System.Collections.Generic.List{Shesha.NotificationMessages.Dto.NotificationMessageDto})">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.Notifications.Exceptions.ShaNotificationFailedWaitRetryException">
+            <summary>
+            Notification failed and awaiting for retry exception
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.Exceptions.ShaNotificationIsStillPreparingException">
+            <summary>
+            Notification is still preparing exception
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.Exceptions.ShaNotificationNotFoundException">
+            <summary>
+            Notification not found exception
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.Exceptions.ShaNotificationSaveFailedException">
+            <summary>
+            Notification save failed exception
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.INotificationAppService">
+            <summary>
+            Notification service
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationAppService.PublishAsync(System.String,Abp.Notifications.NotificationData,System.Collections.Generic.List{Shesha.Domain.Person},System.Object)">
+            <summary>
+            Publish new notification
+            </summary>
+            <param name="notificationName">Name of the notification</param>
+            <param name="data">Notification data (is used in templates)</param>
+            <param name="recipients">list of recipients</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationAppService.PublishEmailNotificationAsync``1(System.String,``0,System.String,System.Collections.Generic.List{Shesha.Notifications.Dto.NotificationAttachmentDto},System.Object)">
+            <summary>
+            Publish email notification
+            </summary>
+            <param name="notificationName">Name of the notification. Default email template of the specified notification will be used</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="emailAddress">Recipient email address</param>
+            <param name="attachments">Notification attachments</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationAppService.PublishEmailNotificationAsync``1(System.Guid,``0,System.String,System.Collections.Generic.List{Shesha.Notifications.Dto.NotificationAttachmentDto},System.Object)">
+            <summary>
+            Publish email notification using explicitly specified template
+            </summary>
+            <param name="templateId">Id of the template</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="emailAddress">Recipient email address</param>
+            <param name="attachments">Notification attachments</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationAppService.PublishSmsNotificationAsync``1(System.String,``0,System.String,System.Object)">
+            <summary>
+            Publish sms notification
+            </summary>
+            <param name="notificationName">Name of the notification. Default email template of the specified notification will be used</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="mobileNo">Recipient mobile number</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationAppService.PublishSmsNotificationAsync``1(System.Guid,``0,System.String,System.Object)">
+            <summary>
+            Publish sms notification using explicitly specified template
+            </summary>
+            <param name="templateId">Id of the template</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="mobileNo">Recipient mobile number</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationAppService.SaveAttachmentAsync(System.String,System.IO.Stream)">
+            <summary>
+            Save notification attachment
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.IShaNotificationDistributer">
+            <summary>
+            Shesha notifications distributer
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.IShaNotificationDistributer.ResendMessageAsync(Shesha.NotificationMessages.Dto.NotificationMessageDto)">
+            <summary>
+            Re-send <see cref="T:Shesha.Domain.NotificationMessage"/> with the specified Id
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.IShaRealTimeNotifier">
+            <summary>
+            Shesha real time notifier
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.IShaRealTimeNotifier.SendNotificationsAsync(System.Collections.Generic.List{Shesha.NotificationMessages.Dto.NotificationMessageDto})">
+            <summary>
+            Send template-based notifications
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.IShaRealTimeNotifier.ResendMessageAsync(Shesha.NotificationMessages.Dto.NotificationMessageDto)">
+            <summary>
+            Re-send <see cref="T:Shesha.Domain.NotificationMessage"/> with the specified Id
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.IShaRealTimeNotifier.NotificationType">
+            <summary>
+            Type of notifications processed by this notifier
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.NotificationAppService">
+            <summary>
+            Notification application service
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.NotificationAppService.PublishAsync(System.String,Abp.Notifications.NotificationData,System.Collections.Generic.List{Shesha.Domain.Person},System.Object)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.NotificationAppService.PublishEmailNotificationAsync``1(System.String,``0,System.String,System.Collections.Generic.List{Shesha.Notifications.Dto.NotificationAttachmentDto},System.Object)">
+            <summary>
+            Publish email notification
+            </summary>
+            <param name="notificationName">Name of the notification. Default email template of the specified notification will be used</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="emailAddress">Recipient email address</param>
+            <param name="attachments">Notification attachments</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.NotificationAppService.PublishEmailNotificationAsync``1(System.Guid,``0,System.String,System.Collections.Generic.List{Shesha.Notifications.Dto.NotificationAttachmentDto},System.Object)">
+            <summary>
+            Publish email notification using explicitly specified template
+            </summary>
+            <param name="templateId">Id of the template</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="emailAddress">Recipient email address</param>
+            <param name="attachments">Attachments</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.NotificationAppService.PublishSmsNotificationAsync``1(System.String,``0,System.String,System.Object)">
+            <summary>
+            Publish sms notification
+            </summary>
+            <param name="notificationName">Name of the notification. Default email template of the specified notification will be used</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="mobileNo">Recipient mobile number</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.NotificationAppService.PublishSmsNotificationAsync``1(System.Guid,``0,System.String,System.Object)">
+            <summary>
+            Publish sms notification using explicitly specified template
+            </summary>
+            <param name="templateId">Id of the template</param>
+            <param name="data">Data that is used to fill template</param>
+            <param name="mobileNo">Recipient mobile number</param>
+            <param name="sourceEntity">Optional parameter. If notification is an Entity level notification, specifies the entity the notification relates to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.NotificationAppService.ReSendAbpNotification(System.Collections.Generic.List{System.Guid})">
+            <summary>
+            Note: for temporary usage only
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.NotificationAppService.SaveAttachmentAsync(System.String,System.IO.Stream)">
+            <summary>
+            Save notification attachment
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.NotificationPublicationContext">
+            <summary>
+            Notification publication context. Is used to pass parameters and collect statistics
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.NotificationPublicationContext.BeginScope">
+            inheritedDoc
+        </member>
+        <member name="P:Shesha.Notifications.NotificationPublicationContext.Statistics">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.NotificationPublicationContext.NotificationMessageCreated(Shesha.NotificationMessages.Dto.NotificationMessageDto)">
+            inheritedDoc
+        </member>
+        <member name="P:Shesha.Notifications.NotificationPublicationStatistics.NotificationMessages">
+            <summary>
+            List of created notification messages
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.INotificationPublicationContext">
+            <summary>
+            Notification publication context. Is used to pass parameters and collect statistics
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationPublicationContext.BeginScope">
+            <summary>
+            Begin new scope. All statistics will be collected as part of this scope
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Shesha.Notifications.INotificationPublicationContext.Statistics">
+            <summary>
+            Statistics
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.INotificationPublicationContext.NotificationMessageCreated(Shesha.NotificationMessages.Dto.NotificationMessageDto)">
+            <summary>
+            Register createtion of notification message
+            </summary>
+            <param name="notificationMessageDto"></param>
+        </member>
+        <member name="T:Shesha.Notifications.PushRealTimeNotifier">
+            <summary>
+            Push notifier
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.PushRealTimeNotifier.NotificationType">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.PushRealTimeNotifier.SendNotificationsAsync(Abp.Notifications.UserNotification[])">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.PushRealTimeNotifier.DoSendNotificationMessageAsync(Shesha.Domain.NotificationMessage)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.PushRealTimeNotifier.SendNotificationsAsync(System.Collections.Generic.List{Shesha.NotificationMessages.Dto.NotificationMessageDto})">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.Notifications.RealTimeNotifierBase">
+            <summary>
+            Base class of realtime notifier. Key features:
+            1. Generation of messages based on templates. Uses mustache syntax
+            2. Audit (uses <see cref="T:Shesha.Domain.NotificationMessage"/>)
+            3. Work in background with retries
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GetTemplateAsync(System.String,Shesha.Domain.Enums.RefListNotificationType)">
+            <summary>
+            Get template by notification name and send type (email/sms etc)
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GetTemplate(System.String,Shesha.Domain.Enums.RefListNotificationType)">
+            <summary>
+            Get template by notification name and send type (email/sms etc)
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GetNotification(System.String)">
+            <summary>
+            Get notification by name
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GetNotificationAsync(System.String)">
+            <summary>
+            Get notification by name
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GetRecipientAsync(Abp.Notifications.UserNotification)">
+            <summary>
+            Get recipient (person) of the message
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GetRecipient(Abp.Notifications.UserNotification)">
+            <summary>
+            Get recipient (person) of the message
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GenerateContentAsync(System.String,Abp.Notifications.UserNotification)">
+            <summary>
+            Generate content based on template (uses mustache syntax)
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GenerateContent(System.String,Abp.Notifications.NotificationData,System.Boolean,System.Boolean)">
+            <summary>
+            Generate content based on template (uses mustache syntax)
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.CreateNotificationMessageAsync(System.Guid,System.Nullable{System.Guid},System.Action{Shesha.Domain.NotificationMessage})">
+            <summary>
+            Create new record in the <see cref="T:Shesha.Domain.NotificationMessage"/>. Is used for audit purposes and retries
+            </summary>
+            <param name="templateId">Id of the template</param>
+            <param name="recipientId">Id of the person</param>
+            <param name="fillData">fill data action (specific to the send type)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.CreateNotificationMessage(System.Guid,System.Nullable{System.Guid},System.Action{Shesha.Domain.NotificationMessage})">
+            <summary>
+            Create new record in the <see cref="T:Shesha.Domain.NotificationMessage"/>. Is used for audit purposes and retries
+            </summary>
+            <param name="templateId">Id of the template</param>
+            <param name="recipientId">Id of the person</param>
+            <param name="fillData">fill data action (specific to the send type)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.UpdateNotificationMessageAsync(System.Guid,System.Action{Shesha.Domain.NotificationMessage})">
+            <summary>
+            Update Notification Message
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.UpdateNotificationMessage(System.Guid,System.Action{Shesha.Domain.NotificationMessage})">
+            <summary>
+            Update Notification Message
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.DoSendNotificationMessageAsync(Shesha.Domain.NotificationMessage)">
+            <summary>
+            Sends notification message. Must be implemented in the derived class
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.DoSendNotificationMessage(Shesha.Domain.NotificationMessage)">
+            <summary>
+            Sends notification message. Must be implemented in the derived class
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.SendNotification(System.Guid)">
+            <summary>
+            Send notification in the background task. Used by Hangfire
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.GetNotificationData(Abp.Notifications.TenantNotificationInfo)">
+            <summary>
+            Return notification data (unwrap <see cref="T:Shesha.Notifications.Dto.ShaNotificationData"/> if needed)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.SendNotifications(System.Collections.Generic.List{Shesha.NotificationMessages.Dto.NotificationMessageDto},Shesha.Domain.Enums.RefListNotificationType)">
+            <summary>
+            Send template-based notifications
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.SendNotificationsAsync(System.Collections.Generic.List{Shesha.NotificationMessages.Dto.NotificationMessageDto},Shesha.Domain.Enums.RefListNotificationType)">
+            <summary>
+            Send template-based notifications
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.RealTimeNotifierBase.ResendMessageAsync(Shesha.NotificationMessages.Dto.NotificationMessageDto)">
+            <summary>
+            Re-sends specified notification message
+            </summary>
+            <param name="notificationMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Notifications.ShaNotificationDistributer.#ctor(Abp.Notifications.INotificationConfiguration,Abp.Notifications.INotificationDefinitionManager,Abp.Notifications.INotificationStore,Abp.Domain.Uow.IUnitOfWorkManager,Abp.IGuidGenerator,Abp.Dependency.IIocResolver,Abp.Domain.Repositories.IRepository{Shesha.Domain.NotificationMessage,System.Guid},Abp.Domain.Repositories.IRepository{Shesha.Domain.StoredFile,System.Guid},Abp.Domain.Repositories.IRepository{Shesha.Domain.NotificationMessageAttachment,System.Guid},Shesha.Notifications.INotificationPublicationContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abp.Notifications.NotificationDistributionJob"/> class.
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.ShaNotificationDistributer.ResendMessageAsync(Shesha.NotificationMessages.Dto.NotificationMessageDto)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.Notifications.ShaNotificationPublisher">
+            <summary>
+            Implements <see cref="T:Abp.Notifications.INotificationPublisher"/>.
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.ShaNotificationPublisher.AllTenants">
+            <summary>
+            Indicates all tenants.
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.ShaNotificationPublisher.AbpSession">
+            <summary>
+            Reference to ABP session.
+            </summary>
+        </member>
+        <member name="M:Shesha.Notifications.ShaNotificationPublisher.#ctor(Abp.Notifications.INotificationStore,Abp.BackgroundJobs.IBackgroundJobManager,Abp.Notifications.INotificationConfiguration,Abp.IGuidGenerator,Abp.Dependency.IIocResolver,Shesha.Notifications.IShaNotificationDistributer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Abp.Notifications.NotificationPublisher"/> class.
+            </summary>
+        </member>
+        <member name="T:Shesha.Notifications.SmsRealTimeNotifier">
+            <summary>
+            SMS notifier
+            </summary>
+        </member>
+        <member name="P:Shesha.Notifications.SmsRealTimeNotifier.NotificationType">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.SmsRealTimeNotifier.SendNotificationsAsync(Abp.Notifications.UserNotification[])">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.SmsRealTimeNotifier.DoSendNotificationMessageAsync(Shesha.Domain.NotificationMessage)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Notifications.SmsRealTimeNotifier.SendNotificationsAsync(System.Collections.Generic.List{Shesha.NotificationMessages.Dto.NotificationMessageDto})">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.NullHomePageRouter">
+            <summary>
+            Empty implementation of the <see cref="T:Shesha.IHomePageRouter"/>
+            </summary>
+        </member>
+        <member name="M:Shesha.NullHomePageRouter.GetHomePageUrlAsync(Shesha.Authorization.Users.User)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Otp.CacheOtpStorage.SaveAsync(Shesha.Otp.Dto.OtpDto)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Otp.CacheOtpStorage.UpdateAsync(System.Guid,System.Func{Shesha.Otp.Dto.OtpDto,System.Threading.Tasks.Task})">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Otp.CacheOtpStorage.GetAsync(System.Guid)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.Otp.Configuration.IOtpSettings">
+            <summary>
+            One time pin Settings
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.PasswordLength">
+            <summary>
+            Length of the OTP
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.Alphabet">
+            <summary>
+            Alphabet which is used for OTP generation. For example `abcde` or `1234567890`
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.DefaultLifetime">
+            <summary>
+            Default lifetime of the password in seconds
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.IgnoreOtpValidation">
+            <summary>
+            Ignore validation of the OTP. If true, OTP service doesn't send OTP and skip it's validation but other functions works as usual.
+            Note: just for testing purposes
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.DefaultSubjectTemplate">
+            <summary>
+            Subject template
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.DefaultBodyTemplate">
+            <summary>
+            Body template
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.DefaultEmailSubjectTemplate">
+            <summary>
+            Email link subject template
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.IOtpSettings.DefaultEmailBodyTemplate">
+            <summary>
+            Email link body template
+            </summary>
+        </member>
+        <member name="T:Shesha.Otp.Configuration.OtpDefaults">
+            <summary>
+            OTP Defaults
+            </summary>
+        </member>
+        <member name="T:Shesha.Otp.Configuration.OtpSettingsDto">
+            <summary>
+            Represents settings of the OTP service
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.OtpSettingsDto.PasswordLength">
+            <summary>
+            Length of the OTP
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.OtpSettingsDto.Alphabet">
+            <summary>
+            Alphabet which is used for OTP generation. For example `abcde` or `1234567890`
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.OtpSettingsDto.DefaultLifetime">
+            <summary>
+            Default lifetime of the password in seconds
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.OtpSettingsDto.IgnoreOtpValidation">
+            <summary>
+            Ignore validation of the OTP. If true, OTP service doesn't send OTP and skip it's validation but other functions works as usual.
+            Note: just for testing purposes
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.OtpSettingsDto.EmailSubject">
+            <summary>
+            Subject for the email when the email link is sent to the recipient.
+            TODO: Find a better place to place these
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Configuration.OtpSettingsDto.EmailBodyTemplate">
+            <summary>
+            Email template body
+            </summary>
+        </member>
+        <member name="T:Shesha.Otp.DbOtpStorage">
+            <summary>
+            Database storage for one-time-pins
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.DbOtpStorage.#ctor(Abp.Domain.Repositories.IRepository{Shesha.Domain.OtpAuditItem,System.Guid},Abp.Domain.Uow.IUnitOfWorkManager)">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.DbOtpStorage.SaveAsync(Shesha.Otp.Dto.OtpDto)">
+            <summary>
+            Save OTP to the DB
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.DbOtpStorage.UpdateAsync(System.Guid,System.Func{Shesha.Otp.Dto.OtpDto,System.Threading.Tasks.Task})">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Otp.DbOtpStorage.GetAsync(System.Guid)">
+            <summary>
+            Get OTP from the DB
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Shesha.Otp.Dto.OtpAuditItemDto.CreationTime">
+            <summary>
+            Creation time
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.OtpAuditItemDto.SendTo">
+            <summary>
+            Mobile number/email address (depending on the `send type`) to which the OTP was sent
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.OtpAuditItemDto.SendType">
+            <summary>
+            Type of sender (Sms = 1, Email = 2)
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.OtpAuditItemDto.ExpiresOn">
+            <summary>
+            Expiration date
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.OtpDto.SendTo">
+            <summary>
+            Mobile number/email address (depending on the `send type`) to which the OTP should be sent
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.OtpDto.SendType">
+            <summary>
+            Type of sender (Sms = 1, Email = 2)
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.OtpDto.ActionType">
+            <summary>
+            Type of action (e.g. 'password restore'). May be used for audit purposes and template selection
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.ResendPinInput.OperationId">
+            <summary>
+            Unique runtime identifier of the operation
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.ResendPinInput.Lifetime">
+            <summary>
+            Lifetime of the one time password in seconds
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.SendPinDto.OperationId">
+            <summary>
+            Unique runtime identifier of the operation. Is used for resending
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.SendPinDto.SentTo">
+            <summary>
+            Mobile number/email address (depending on the `send type`) to which the OTP has been sent. Is used when we send OTP to the user or another entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.SendPinInput.SendTo">
+            <summary>
+            Mobile number/email address (depending on the `send type`) to which the OTP should be sent
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.SendPinInput.SendType">
+            <summary>
+            Type of sender (Sms = 1, Email = 2)
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.SendPinInput.Lifetime">
+            <summary>
+            Lifetime of the one time password in seconds
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.SendPinInput.ActionType">
+            <summary>
+            Type of action (e.g. 'password restore'). May be used for audit purposes and template selection
+            </summary>
+        </member>
+        <member name="T:Shesha.Otp.Dto.VerifyPinInput">
+            <summary>
+            Verify OTP input
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.VerifyPinInput.OperationId">
+            <summary>
+            Unique runtime identifier of the operation. Is used for resending
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.VerifyPinInput.Pin">
+            <summary>
+            Value of the One Time Pin
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.VerifyPinResponse.IsSuccess">
+            <summary>
+            Indicates that the OTP matches to the sent one
+            </summary>
+        </member>
+        <member name="P:Shesha.Otp.Dto.VerifyPinResponse.ErrorMessage">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="T:Shesha.Otp.IOtpAppService">
+            <summary>
+            Interface of the one-time-pin service
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.IOtpAppService.SendPinAsync(Shesha.Otp.Dto.SendPinInput)">
+            <summary>
+            Send one-time-pin
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.IOtpAppService.ResendPinAsync(Shesha.Otp.Dto.ResendPinInput)">
+            <summary>
+            Resend one-time-pin
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.IOtpAppService.VerifyPinAsync(Shesha.Otp.Dto.VerifyPinInput)">
+            <summary>
+            Verify one-time-pin
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.IOtpAppService.GetAsync(System.Guid)">
+            <summary>
+            Get OTP
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Otp.IOtpGenerator.GeneratePin">
+            <summary>
+            Generates new password
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Otp.IOtpStorage">
+            <summary>
+            Storage of the One Time Pins
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.IOtpStorage.SaveAsync(Shesha.Otp.Dto.OtpDto)">
+            <summary>
+            Save OTP
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Otp.IOtpStorage.UpdateAsync(System.Guid,System.Func{Shesha.Otp.Dto.OtpDto,System.Threading.Tasks.Task})">
+            <summary>
+            Update OTP (is used to update status, lifetime)
+            </summary>
+            <param name="operationId"></param>
+            <param name="updateAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Otp.IOtpStorage.GetAsync(System.Guid)">
+            <summary>
+            Get OTP
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Otp.OtpAppService.SendPinAsync(Shesha.Otp.Dto.SendPinInput)">
+            <summary>
+            Send one-time-pin
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.OtpAppService.ResendPinAsync(Shesha.Otp.Dto.ResendPinInput)">
+            <summary>
+            Resend one-time-pin
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.OtpAppService.VerifyPinAsync(Shesha.Otp.Dto.VerifyPinInput)">
+            <summary>
+            Verify one-time-pin
+            </summary>
+        </member>
+        <member name="M:Shesha.Otp.OtpAppService.GetAsync(System.Guid)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.Otp.OtpAppService.UpdateSettingsAsync(Shesha.Otp.Configuration.OtpSettingsDto)">
+            inheritDoc
+        </member>
+        <member name="M:Shesha.Otp.OtpAppService.GetSettingsAsync">
+            inheritDoc
+        </member>
+        <member name="T:Shesha.Otp.OtpAuditItemAppService">
+            <summary>
+            One-time-pin audit service
+            </summary>
+        </member>
+        <member name="T:Shesha.Permissions.IPermissionedObjectAppService">
+            <summary>
+            Person Application Service
+            </summary>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.#ctor(Abp.Domain.Repositories.IRepository{Shesha.Domain.PermissionedObject,System.Guid})">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.GetAllFlatAsync(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Get list of protected objects
+            </summary>
+            <param name="type"></param>
+            <param name="showNested"></param>
+            <param name="showHidden"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.GetAllTreeAsync(System.String,System.Boolean)">
+            <summary>
+            Get hierarchical list of protected objects
+            </summary>
+            <param name="type"></param>
+            <param name="showHidden"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.GetByObjectNameAsync(System.String)">
+            <summary>
+            Get protected object by name
+            </summary>
+            <param name="objectName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.SetPermissionsAsync(System.String,Shesha.Domain.Enums.RefListPermissionedAccess,System.Collections.Generic.List{System.String})">
+            <summary>
+            Set required permissions for protected object by name
+            </summary>
+            <param name="objectName"></param>
+            <param name="access"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.GetApiPermissionsAsync(System.String,System.String)">
+            <summary>
+            Get protected object for API by Service and Action names
+            </summary>
+            <param name="serviceName"></param>
+            <param name="actionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.UpdateAsync(Shesha.Permissions.PermissionedObjectDto)">
+            <summary>
+            Update protected object data
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.SetApiPermissionsAsync(System.String,System.String,Shesha.Domain.Enums.RefListPermissionedAccess,System.Collections.Generic.List{System.String})">
+            <summary>
+            Set required permissions for API by Service and Action names
+            </summary>
+            <param name="serviceName"></param>
+            <param name="actionName"></param>
+            <param name="access"></param>
+            <param name="permissions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Permissions.PermissionedObjectAppService.ClearCacheAsync">
+            <summary>
+            Clear protected objects cache
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Push.Configuration.IPushSettings">
+            <summary>
+            Push Settings
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Configuration.IPushSettings.PushNotifier">
+            <summary>
+            Push Notifier
+            </summary>
+        </member>
+        <member name="T:Shesha.Push.Dtos.PushNotifierDto">
+            <summary>
+            Push notifier DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.PushNotifierDto.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.PushNotifierDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.PushNotifierDto.Uid">
+            <summary>
+            Unique identifier of the notifier
+            </summary>
+        </member>
+        <member name="T:Shesha.Push.Dtos.PushSettingsDto">
+            <summary>
+            Represents push settings
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.PushSettingsDto.PushNotifier">
+            <summary>
+            Selected push notifier
+            </summary>
+        </member>
+        <member name="T:Shesha.Push.Dtos.SendNotificationInput">
+            <summary>
+            Input for sending a push notification
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.SendNotificationInput.Body">
+            <summary>
+            Notification body
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.SendNotificationInput.Title">
+            <summary>
+            Notification title
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.SendNotificationInput.Data">
+            <summary>
+            Additional data
+            </summary>
+        </member>
+        <member name="T:Shesha.Push.Dtos.SendNotificationToPersonInput">
+            <summary>
+            Input for sending a push notification to a person
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.SendNotificationToPersonInput.PersonId">
+            <summary>
+            Id of the person (recipient)
+            </summary>
+        </member>
+        <member name="T:Shesha.Push.Dtos.SendNotificationToTopicInput">
+            <summary>
+            Input for sending push notification to a topic
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.Dtos.SendNotificationToTopicInput.Topic">
+            <summary>
+            Topic
+            </summary>
+        </member>
+        <member name="T:Shesha.Push.IPushNotifier">
+            <summary>
+            Interface of the push notifier
+            </summary>
+        </member>
+        <member name="M:Shesha.Push.IPushNotifier.SendNotificationToPersonAsync(Shesha.Push.Dtos.SendNotificationToPersonInput)">
+            <summary>
+            Send notification to a specified person
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Push.NullPushNotifier">
+            <summary>
+            Null push notifier
+            </summary>
+        </member>
+        <member name="F:Shesha.Push.NullPushNotifier.Uid">
+            <summary>
+            Unique identifier of the <see cref="T:Shesha.Push.NullPushNotifier"/> class, is used for references instead of class name
+            </summary>
+        </member>
+        <member name="P:Shesha.Push.NullPushNotifier.Logger">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="M:Shesha.Push.NullPushNotifier.SendNotificationToPersonAsync(Shesha.Push.Dtos.SendNotificationToPersonInput)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.Push.PushSettingsAppService">
+            <summary>
+            Push settings application service
+            </summary>
+        </member>
+        <member name="M:Shesha.Push.PushSettingsAppService.GetSettings">
+            <summary>
+            Get push notifications settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Push.PushSettingsAppService.UpdateSettings(Shesha.Push.Dtos.PushSettingsDto)">
+            <summary>
+            Update push notifications settings
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.ReferenceLists.Dto.GetReferenceListByIdInput">
+            <summary>
+            Get by Id input
+            </summary>
+        </member>
+        <member name="P:Shesha.ReferenceLists.Dto.GetReferenceListByIdInput.Id">
+            <summary>
+            Reference listid
+            </summary>
+        </member>
+        <member name="T:Shesha.ReferenceLists.Dto.GetReferenceListByNameInput">
+            <summary>
+            Get by name input
+            </summary>
+        </member>
+        <member name="P:Shesha.ReferenceLists.Dto.GetReferenceListByNameInput.Module">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="P:Shesha.ReferenceLists.Dto.GetReferenceListByNameInput.Name">
+            <summary>
+            Reference list name
+            </summary>
+        </member>
+        <member name="T:Shesha.ReferenceLists.Dto.GetReferenceListInputBase">
+            <summary>
+            Base input that is used to get reference list
+            </summary>
+        </member>
+        <member name="P:Shesha.ReferenceLists.Dto.GetReferenceListInputBase.Md5">
+            <summary>
+            MD5 of the reference list. Is used for the client side caching.
+            If specified, the application should compare the value received from the client with a local cache and return http response with code 304 (not changed)
+            </summary>
+        </member>
+        <member name="M:Shesha.ReferenceLists.ReferenceListAppService.GetByNameAsync(Shesha.ReferenceLists.Dto.GetReferenceListByNameInput)">
+            <summary>
+            Get current form configuration by name
+            </summary>
+            <returns></returns>
+            <exception cref="T:Shesha.Services.ReferenceLists.Exceptions.ReferenceListNotFoundException"></exception>
+        </member>
+        <member name="M:Shesha.ReferenceLists.ReferenceListAppService.GetItemsAsync(System.String,System.String)">
+            <summary>
+            Get ReferenceList Items
+            </summary>
+        </member>
+        <member name="M:Shesha.ReferenceLists.ReferenceListAppService.ClearCacheFullAsync">
+            <summary>
+            Clear reference list cache
+            </summary>
+        </member>
+        <member name="M:Shesha.ReferenceLists.ReferenceListAppService.UpdateAsync(Shesha.Services.ReferenceLists.Dto.UpdateReferenceListDto)">
+            <summary>
+            Update reference list
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.ReferenceLists.ReferenceListAppService.CreateAsync(Shesha.Services.ReferenceLists.Dto.CreateReferenceListDto)">
+            <summary>
+            Create reference list
+            </summary>
+        </member>
+        <member name="M:Shesha.ReferenceLists.ReferenceListAppService.GetModuleAsync(System.String)">
+            <summary>
+            Ger module by name
+            </summary>
+            <param name="moduleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Sessions.SessionAppService.GetGrantedShaRoles">
+            <summary>
+            I am using this method to get user roles and it is being used on login of a user and also when changing work Order Type, Please contact me(Moses) before removing it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Sessions.SessionAppService.ClearPermissionsCache">
+            <summary>
+            Clears permissions cache
+            </summary>
+        </member>
+        <member name="T:Shesha.Settings.Dto.GetSettingValueInput">
+            <summary>
+            Get setting value input
+            </summary>
+        </member>
+        <member name="P:Shesha.Settings.Dto.GetSettingValueInput.AppKey">
+            <summary>
+            Front-end application key, see <seealso cref="P:Shesha.Domain.FrontEndApp.AppKey"/>. Is used for client-specific applications only.
+            NOTE: this parameter if optional with fallback to the `sha-frontend-application` header
+            </summary>
+        </member>
+        <member name="T:Shesha.Settings.Dto.GetSettingValuesInput">
+            <summary>
+            Get setting values input
+            </summary>
+        </member>
+        <member name="T:Shesha.Settings.Dto.SettingIdentifierDto">
+            <summary>
+            Setting identifier, is used in the settings generic app service
+            </summary>
+        </member>
+        <member name="P:Shesha.Settings.Dto.SettingIdentifierDto.Name">
+            <summary>
+            Setting name
+            </summary>
+        </member>
+        <member name="P:Shesha.Settings.Dto.SettingIdentifierDto.Module">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="T:Shesha.Settings.Dto.UpdateSettingValueInput">
+            <summary>
+            Update setting value input
+            </summary>
+        </member>
+        <member name="P:Shesha.Settings.Dto.UpdateSettingValueInput.Value">
+            <summary>
+            Setting value
+            </summary>
+        </member>
+        <member name="P:Shesha.Settings.Dto.UpdateSettingValueInput.AppKey">
+            <summary>
+            Front-end application key, see <seealso cref="P:Shesha.Domain.FrontEndApp.AppKey"/>. Is used for client-specific applications only
+            </summary>
+        </member>
+        <member name="T:Shesha.Settings.SettingsAppService">
+            <summary>
+            Settings application service
+            </summary>
+        </member>
+        <member name="M:Shesha.Settings.SettingsAppService.GetValues(Shesha.Settings.Dto.GetSettingValuesInput)">
+            <summary>
+            Get setting values
+            </summary>
+        </member>
+        <member name="M:Shesha.Settings.SettingsAppService.GetValue(Shesha.Settings.Dto.GetSettingValueInput)">
+            <summary>
+            Get setting value
+            </summary>
+        </member>
+        <member name="M:Shesha.Settings.SettingsAppService.UpdateValue(Shesha.Settings.Dto.UpdateSettingValueInput)">
+            <summary>
+            Update setting value
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.ShaRoleAppointedPersons.ShaRoleAppointedPersonAppService.CreateAsync(Shesha.ShaRoleAppointedPersons.Dto.CreateShaRoleAppointedPersonDto)">
+            <summary>
+            Creates new appointment
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.SheshaAppServiceBase">
+            <summary>
+            Derive your application services from this class.
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.IocManager">
+            <summary>
+            Reference to the IoC manager.
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.DynamicRepo">
+            <summary>
+            Dynamic repository
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.TenantManager">
+            <summary>
+            Tenant manager
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.UserManager">
+            <summary>
+            User Manager
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.DtoBuilder">
+            <summary>
+            Dynamic DTO builder
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.DynamicPropertyManager">
+            <summary>
+            Dynamic property manager
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.DynamicDtoMappingHelper">
+            <summary>
+            Dynamic DTO mapping helper
+            </summary>
+        </member>
+        <member name="P:Shesha.SheshaAppServiceBase.Url">
+            <summary>
+            Url helper
+            </summary>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.GetCurrentPersonAsync">
+            <summary>
+            Cet current logged in person
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.GetCurrentUserAsync">
+            <summary>
+            Get current logged in user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.GetCurrentTenantAsync">
+            <summary>
+            Get current tenant
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.CheckErrors(Microsoft.AspNetCore.Identity.IdentityResult)">
+            <summary>
+            Check errors
+            </summary>
+            <param name="identityResult"></param>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.SaveOrUpdateEntityAsync``1(System.Nullable{System.Guid},System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+            Saves or update entity with the specified id
+            </summary>
+            <typeparam name="T">Type of entity</typeparam>
+            <param name="id">Id of the existing entity or null for a new one</param>
+            <param name="action">Update action</param>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.SaveOrUpdateEntityAsync``1(System.Nullable{System.Guid},System.Action{``0})">
+            <summary>
+            Saves or update entity with the specified id
+            </summary>
+            <typeparam name="T">Type of entity</typeparam>
+            <param name="id">Id of the existing entity or null for a new one</param>
+            <param name="action">Update action</param>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.SaveOrUpdateEntityAsync``2(System.Nullable{``1},System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+            Saves or update entity with the specified id
+            </summary>
+            <typeparam name="T">Type of entity</typeparam>
+            <typeparam name="TId">Id type</typeparam>
+            <param name="id">Id of the existing entity or null for a new one</param>
+            <param name="action">Update action</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.GetEntityAsync``1(System.Guid,System.Boolean)">
+            <summary>
+            Returns entity of the specified type with the specified <paramref name="id"/>
+            </summary>
+            <typeparam name="T">Type of entity</typeparam>
+            <param name="id">Id of the entity</param>
+            <param name="throwException">Throw exception if entity not found</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.GetEntityAsync``2(``1,System.Boolean)">
+            <summary>
+            Returns entity of the specified type with the specified <paramref name="id"/>
+            </summary>
+            <typeparam name="T">Type of entity</typeparam>
+            <typeparam name="TId">Id type</typeparam>
+            <param name="id">Id of the entity</param>
+            <param name="throwException">Throw exception if entity not found</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.ValidateEntityAsync``1(``0,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Runs validation
+            </summary>
+            <param name="entity"></param>
+            <param name="validationResults"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.FluentValidationsOnEntityAsync``1(``0,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Runs validation defined on entity through fluentValidation
+            </summary>
+            <param name="entity"></param>
+            <param name="validationResults"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapToDynamicDtoAsync``2(``0,Shesha.DynamicEntities.IDynamicMappingSettings)">
+            <summary>
+            Map entity to a <see cref="T:Shesha.DynamicEntities.Dtos.DynamicDto`2"/>
+            </summary>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of entity primary key</typeparam>
+            <param name="entity">entity to map</param>
+            <param name="settings">mapping settings</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapToCustomDynamicDtoAsync``3(``1,Shesha.DynamicEntities.IDynamicMappingSettings)">
+            <summary>
+            Map entity to a custom <see cref="T:Shesha.DynamicEntities.Dtos.DynamicDto`2"/>
+            </summary>
+            <typeparam name="TDynamicDto">Type of dynamic DTO</typeparam>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of entity primary key</typeparam>
+            <param name="entity">entity to map</param>
+            <param name="settings">mapping settings</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapStaticPropertiesToEntityDtoAsync``3(``0,``1)">
+            <summary>
+            Map static properties (defined in the entity class) of dynamic DTO to a specified entity
+            </summary>
+            <typeparam name="TDynamicDto">Type of Dynamic DTO</typeparam>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+            <param name="dto">Source DTO</param>
+            <param name="entity">Destination entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapDynamicPropertiesToEntityAsync``3(``0,``1)">
+            <summary>
+            Map dynamic properties (defined using entity configurator) of dynamic DTO to a specified entity
+            </summary>
+            <typeparam name="TDynamicDto">Type of Dynamic DTO</typeparam>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+            <param name="dto">Source DTO</param>
+            <param name="entity">Destination entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapDynamicDtoToEntityAsync``3(``0,``1)">
+            <summary>
+            Map all properties (dynamic and static) of dynamic DTO to a specified entity
+            </summary>
+            <typeparam name="TDynamicDto">Type of Dynamic DTO</typeparam>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+            <param name="dto">Source DTO</param>
+            <param name="entity">Destination entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapJObjectToEntityAsync``2(Newtonsoft.Json.Linq.JObject,``0,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Map properties of JObject to a specified entity
+            </summary>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+            <param name="jObject">Data</param>
+            <param name="entity">Destination entity</param>
+            <param name="validationResult">Validation result</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapJObjectToStaticPropertiesEntityAsync``2(Newtonsoft.Json.Linq.JObject,``0,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Map static properties of JObject to a specified entity
+            </summary>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+            <param name="jObject">Data</param>
+            <param name="entity">Destination entity</param>
+            <param name="validationResult">Validation result</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.SheshaAppServiceBase.MapJObjectToDynamicPropertiesEntityAsync``2(Newtonsoft.Json.Linq.JObject,``0,System.Collections.Generic.List{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            Map dynamic properties of JObject to a specified entity
+            </summary>
+            <typeparam name="TEntity">Type of entity</typeparam>
+            <typeparam name="TPrimaryKey">Type of primary key</typeparam>
+            <param name="jObject">Data</param>
+            <param name="entity">Destination entity</param>
+            <param name="validationResult">Validation result</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.SheshaCrudServiceBase`6">
+            <summary>
+            CRUD service base
+            </summary>
+        </member>
+        <member name="M:Shesha.SheshaCrudServiceBase`6.#ctor(Abp.Domain.Repositories.IRepository{`0,`2})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="T:Shesha.SheshaCrudServiceBase`7">
+            <summary>
+            CRUD service base
+            </summary>
+        </member>
+        <member name="M:Shesha.SheshaCrudServiceBase`7.#ctor(Abp.Domain.Repositories.IRepository{`0,`2})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="P:Shesha.SheshaCrudServiceBase`7.DocumentExecuter">
+            <summary>
+            GraphQL document executer
+            </summary>
+        </member>
+        <member name="M:Shesha.SheshaCrudServiceBase`7.QueryAsync(Shesha.IO.Application.Services.Dto.GetDynamicEntityInput{`2})">
+            <summary>
+            Query entity data. 
+            NOTE: don't use on prod, will be merged with the `Get`endpoint soon
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+            <response code="200">NOTE: shape of the `result` depends on the `properties` argument. When `properties` argument is not specified - it returns top level properties of the entity, all referenced entities are presented as their Id values</response>
+        </member>
+        <member name="M:Shesha.SheshaCrudServiceBase`7.QueryAllAsync(Shesha.IO.Application.Services.Dto.PropsFilteredPagedAndSortedResultRequestDto)">
+            <summary>
+            Query entities list
+            NOTE: don't use on prod, will be merged with the GetAll endpoint soon
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+            <response code="200">NOTE: shape of the `items[]` depends on the `properties` argument. When `properties` argument is not specified - it returns top level properties of the entity, all referenced entities are presented as their Id values</response>
+        </member>
+        <member name="M:Shesha.SheshaCrudServiceBase`7.GetAllFiltered(System.String)">
+            <summary>
+            Get filtered list of entities
+            </summary>
+            <param name="filter">Filter in JsonLogic format</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.ConfigurableSmsGateway`1">
+            <summary>
+            Configurable SMS gateway
+            </summary>
+            <typeparam name="TSettings"></typeparam>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.ConfigurableSmsGateway`1.SettingsType">
+            <summary>
+            Gateway settings type
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Application.Sms.ConfigurableSmsGateway`1.GetSettingsAsync">
+            <summary>
+            Get gateway settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Application.Sms.ConfigurableSmsGateway`1.GetTypedSettingsAsync">
+            <summary>
+            Get types settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Application.Sms.ConfigurableSmsGateway`1.SendSmsAsync(System.String,System.String)">
+            <summary>
+            Send SMS
+            </summary>
+            <param name="mobileNumber"></param>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Application.Sms.ConfigurableSmsGateway`1.SetSettingsAsync(System.Object)">
+            <summary>
+            Set gateway settings
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Application.Sms.ConfigurableSmsGateway`1.SetTypedSettingsAsync(`0)">
+            <summary>
+            Get typed gateway settings
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.Configuration.ISmsSettings">
+            <summary>
+            SMS Settings
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Configuration.ISmsSettings.SmsGateway">
+            <summary>
+            SMS Gateway
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Configuration.ISmsSettings.RedirectAllMessagesTo">
+            <summary>
+            Redirect all messages to.
+            Is used for testing purposes only
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.Dtos.SmsGatewayDto">
+            <summary>
+            SMS Gateway DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsGatewayDto.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsGatewayDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsGatewayDto.Uid">
+            <summary>
+            Unique identifier of the Sms Gateway
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsGatewayDto.Alias">
+            <summary>
+            Sms gateway alias. Can be used as a friendly identifier of the gateway
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.Dtos.SmsSettingsDto">
+            <summary>
+            Represents sms settings
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsSettingsDto.Gateway">
+            <summary>
+            Selected sms gateway
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsSettingsDto.RedirectAllMessagesTo">
+            <summary>
+            If specified, all sms messages will be redirected to this number. Is used for testing purposes
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.Dtos.SmsSettingsV2Dto">
+            <summary>
+            Represents sms settings
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsSettingsV2Dto.Gateway">
+            <summary>
+            Selected sms gateway alias
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.Dtos.SmsSettingsV2Dto.RedirectAllMessagesTo">
+            <summary>
+            If specified, all sms messages will be redirected to this number. Is used for testing purposes
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.IProxySettings">
+            <summary>
+            Proxy server settings
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.IProxySettings.WebProxyAddress">
+            <summary>
+            Web Proxy Address
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.IProxySettings.UseProxy">
+            <summary>
+            Disable Proxy
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.IProxySettings.UseDefaultProxyCredentials">
+            <summary>
+            Use AD Proxy
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.IProxySettings.ProxyUsername">
+            <summary>
+            Web Proxy username
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Application.Sms.IProxySettings.ProxyPassword">
+            <summary>
+            Web Proxy password
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.ISmsGateway">
+            <summary>
+            SMS gateway
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Application.Sms.ISmsGateway.SendSmsAsync(System.String,System.String)">
+            <summary>
+            Send sms to specified mobile number
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.Application.Sms.NullSmsGateway.Uid">
+            <summary>
+            Unique identifier of the <see cref="T:Shesha.IO.Application.Sms.NullSmsGateway"/> class, is used for references instead of class name
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Application.Sms.SmsUtils">
+            <summary>
+            Common sms utils
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Application.Sms.SmsUtils.GetGatewayAlias(System.Type)">
+            <summary>
+            Get sms gateway alias by type
+            </summary>
+            <param name="gatewayType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Startup.DynamicAppServiceRegistration">
+            <summary>
+            Dynamic Application Service registration
+            </summary>
+        </member>
+        <member name="T:Shesha.Startup.IShaApplicationModuleConfiguration">
+            <summary>
+            Configuration of the <see cref="T:Shesha.SheshaApplicationModule"/>
+            </summary>
+        </member>
+        <member name="T:Shesha.Startup.ShaApplicationConfigurationExtensions">
+            <summary>
+            Defines extension methods to <see cref="T:Abp.Configuration.Startup.IModuleConfigurations"/> to allow to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="M:Shesha.Startup.ShaApplicationConfigurationExtensions.ShaApplication(Abp.Configuration.Startup.IModuleConfigurations)">
+            <summary>
+            Used to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="T:Shesha.Startup.ShaApplicationModuleConfiguration">
+            <summary>
+            Configuration of the <see cref="T:Shesha.SheshaApplicationModule"/>
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.CreateStoredFileInput">
+            <summary>
+            Create stored file input
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.CreateStoredFileInput.Id">
+            <summary>
+            Id of the stored file
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.CreateStoredFileInput.OwnerId">
+            <summary>
+            Id of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.CreateStoredFileInput.OwnerType">
+            <summary>
+            Type short alias of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.CreateStoredFileInput.FilesCategory">
+            <summary>
+            Category of the file. Is used to split attachments into groups
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.CreateStoredFileInput.PropertyName">
+            <summary>
+            Property name of the owner entity. Is used for direct links only (when owner references file using foreign key)
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.CreateStoredFileInput.File">
+            <summary>
+            File content
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.DeleteStoredFileInput">
+            <summary>
+            Delete Stored File input
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.DeleteStoredFileInput.FileId">
+            <summary>
+            File Id
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.DeleteStoredFileInput.OwnerId">
+            <summary>
+            Id of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.DeleteStoredFileInput.OwnerType">
+            <summary>
+            Type short alias of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.DeleteStoredFileInput.PropertyName">
+            <summary>
+            Property name of the owner entity. Is used for direct links only (when owner references file using foreign key)
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.FilesListInput.AllCategories">
+            <summary>
+            Set to true to get files of all categories
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.StaticFileInput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StaticFileInput.Id">
+            <summary>
+            Id of the stored file
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StaticFileInput.FilesCategory">
+            <summary>
+            Category of the file. Is used to split attachments into groups
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StaticFileInput.PropertyName">
+            <summary>
+            Property name of the owner entity. Is used for direct links only (when owner references file using foreign key)
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StaticFileInput.File">
+            <summary>
+            File content
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.StoredFileAsPropertyDto">
+            <summary>
+            DTO of the stored file attached as entity property
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileAsPropertyDto.PropertyName">
+            <summary>
+            Property name of the owner entity. Is used for direct links only (when owner references file using foreign key)
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.StoredFileOwnerDto">
+            <summary>
+            DTO of the stored file owner
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileOwnerDto.OwnerId">
+            <summary>
+            Id of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileOwnerDto.OwnerType">
+            <summary>
+            Type short alias of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFilesInputBase.OwnerId">
+            <summary>
+            Id of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFilesInputBase.OwnerType">
+            <summary>
+            Type short alias of the owner entity
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFilesInputBase.FilesCategory">
+            <summary>
+            Category of the file. Is used to split attachments into groups
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFilesInputBase.PropertyName">
+            <summary>
+            Property name of the owner entity. Is used for direct links only (when owner references file using foreign key)
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFilesInputBase.OwnerName">
+            <summary>
+            Property name of the owner entity. Is used for assign file to the nested entities
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.StoredFileVersionInfoDto">
+            <summary>
+            Stored File version info
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileVersionInfoDto.DateUploaded">
+            <summary>
+            Date of the upload
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileVersionInfoDto.Size">
+            <summary>
+            File size
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileVersionInfoDto.UploadedBy">
+            <summary>
+            User uploaded this version
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileVersionInfoDto.FileName">
+            <summary>
+            File name
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileVersionInfoDto.VersionNo">
+            <summary>
+            Version number
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.StoredFileVersionInfoDto.Url">
+            <summary>
+            Url for version downloading
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.UploadFileInput">
+            <summary>
+            Upload stored file input
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.UploadFileInput.File">
+            <summary>
+            File content
+            </summary>
+        </member>
+        <member name="T:Shesha.StoredFiles.Dto.UploadFileVersionInput">
+            <summary>
+            Upload file version input
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.UploadFileVersionInput.Id">
+            <summary>
+            Id of the file
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.Dto.UploadFileVersionInput.File">
+            <summary>
+            File content
+            </summary>
+        </member>
+        <member name="P:Shesha.StoredFiles.StoredFileController.ObjectMapper">
+            <summary>
+            Reference to the object to object mapper.
+            </summary>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.UploadStaticAsync(Shesha.StoredFiles.Dto.StaticFileInput)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+            <exception cref="T:Abp.Runtime.Validation.AbpValidationException"></exception>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.Delete(Shesha.StoredFiles.Dto.DeleteStoredFileInput)">
+            <summary>
+            Delete file
+            </summary>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.DownloadZipAsync(Shesha.StoredFiles.Dto.DownloadZipInput)">
+            <summary>
+            Download zip archive of all files linked to a specified entity
+            </summary>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.FilesList(Shesha.StoredFiles.Dto.FilesListInput)">
+            <summary>
+            Get list of files attached to a specified entity
+            </summary>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.CreateOrUpdateAsync(Shesha.StoredFiles.Dto.CreateStoredFileInput)">
+            <summary>
+            Update existing file
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.GetAsync(System.Guid)">
+            <summary>
+            Get file by <paramref name="id"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.GetEntityPropertyAsync(Shesha.StoredFiles.Dto.StoredFileAsPropertyDto)">
+            <summary>
+            Get file as property of the entity
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.DeleteFileAsync(System.Guid)">
+            <summary>
+            Delete file
+            </summary>
+        </member>
+        <member name="M:Shesha.StoredFiles.StoredFileController.GetFileVersionsAsync(System.Guid)">
+            <summary>
+            Get versions of the file with specified Id
+            </summary>
+            <param name="fileId">Id of the file</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.UserManagements.IUserManagementAppService">
+            <summary>
+            User Management Application Service
+            </summary>
+        </member>
+        <member name="T:Shesha.UserManagements.UserManagementAppService">
+            <summary>
+            User Management Application Service
+            </summary>
+        </member>
+        <member name="M:Shesha.UserManagements.UserManagementAppService.#ctor(Abp.Domain.Repositories.IRepository{Shesha.Domain.Person,System.Guid})">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:Shesha.UserManagements.UserManagementAppService.MobileNoAlreadyInUse(System.String,System.Nullable{System.Guid})">
+            <summary>
+            Checks is specified mobile number already used by another person
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.UserManagements.UserManagementAppService.EmailAlreadyInUse(System.String,System.Nullable{System.Guid})">
+            <summary>
+            Checks is specified email already used by another person
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Shesha.Users.Dto.ResetPasswordSendOtpResponse.OperationId">
+            <summary>
+            Unique runtime identifier of the operation. Is used for resending
+            </summary>
+        </member>
+        <member name="P:Shesha.Users.Dto.SecurityQuestionPair.QuestionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Users.Dto.SecurityQuestionPair.SubmittedAnswer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Users.Dto.SecurityQuestionVerificationDto.Username">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.ResetPasswordSendOtp(System.String)">
+            <summary>
+            Send One-time pin for password reset
+            </summary>
+            <param name="mobileNo">mobile number of the user</param>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.GetUserPasswordResetOptions(System.String)">
+            <summary>
+            Retrieve the password reset options allowed for the user.
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+            <exception cref="T:Abp.UI.UserFriendlyException"></exception>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.SendSmsOtp(System.String)">
+            <summary>
+            Send SMS OTP provided username.
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+            <exception cref="T:Abp.UI.UserFriendlyException"></exception>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.GetSecurityQuestions(System.String)">
+            <summary>
+            Get a user's selected security questions
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.ValidateResetCode(Shesha.Users.Dto.ResetPasswordValidateCodeInput)">
+            <summary>
+            Validate provided OTP or Email token
+            </summary>
+            <param name="input"></param>
+            <returns>Supposed to return the token required to reset password</returns>
+            <exception cref="T:Abp.UI.UserFriendlyException"></exception>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.ValidateSecurityQuestions(Shesha.Users.Dto.SecurityQuestionVerificationDto)">
+            <summary>
+            Validating security questions submitted by the user
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.SendEmailLink(System.String)">
+            <summary>
+            Send an email to the user with a link to reset their password
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.ResetPasswordVerifyOtp(Shesha.Users.Dto.ResetPasswordVerifyOtpInput)">
+            <summary>
+            Verify one-time pin that was used for password reset. Returns a token that should be used for password update
+            </summary>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.ResetPasswordUsingToken(Shesha.Users.Dto.ResetPasswordUsingTokenInput)">
+            <summary>
+            Resets a password of the user using token
+            </summary>
+        </member>
+        <member name="M:Shesha.Users.UserAppService.ValidateUserPasswordResetMethod(Shesha.Authorization.Users.User,System.Int64)">
+            <summary>
+            Check to see if the specified user is allowed to reset their password using the specified method.
+            </summary>
+            <param name="user"></param>
+            <param name="resetMethod"></param>
+            <exception cref="T:Abp.UI.UserFriendlyException"></exception>
+        </member>
+    </members>
+</doc>

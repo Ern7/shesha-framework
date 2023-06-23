@@ -2,8 +2,8 @@
 using Moq;
 using NHibernate;
 using Shesha.Domain;
-using Shesha.NHibernate;
-using Shesha.NHibernate.Repositories;
+using Shesha.IO.NHibernate;
+using Shesha.IO.NHibernate.Repositories;
 using Shesha.Specifications;
 using Shouldly;
 using System;

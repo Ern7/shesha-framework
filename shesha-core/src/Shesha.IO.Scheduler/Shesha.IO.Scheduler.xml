@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.Scheduler</name>
+    </assembly>
+    <members>
+        <member name="T:Shesha.IO.Scheduler.Attributes.ForwardDisableConcurrentExecutionAttribute">
+            <summary>
+            Attribute to forward <see cref="T:Hangfire.DisableConcurrentExecutionAttribute"/> to <see cref="T:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobAppService"/>
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Bootstrappers.ScheduledJobBootstrapper">
+            <summary>
+            Bootstraps scheduled jobs and saves them into the DB
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Exceptions.JobDeletedException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Exceptions.TriggerDeletedException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.IScheduledJobManager">
+            <summary>
+            Scheduled jobs manager
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.IScheduledJobManager.EnqueueAllAsync">
+            <summary>
+            Enqueue all jobs using Hangfire
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.IScheduledJobManager.GetJobType(System.Guid)">
+            <summary>
+            Get job type by trigger Id
+            </summary>
+            <param name="triggerId">Trigger Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.IScheduledJobManager.RunJobAsync(System.Guid,System.Guid,System.Nullable{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            Run job
+            </summary>
+            <param name="jobId">Job id</param>
+            <param name="executionId">executionId</param>
+            <param name="startedById">Id of the started user</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.IScheduledJobManager.RunJobAsync(System.Guid,System.String,System.Guid,System.Nullable{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="jobId"></param>
+            <param name="jobType"></param>
+            <param name="executionId"></param>
+            <param name="startedById"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.IScheduledJobManager.ExecuteJobMethodAsync(System.Guid,System.String,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="jobId"></param>
+            <param name="jobType"></param>
+            <param name="methodName"></param>
+            <param name="methodArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.IScheduledJobManager.GetJobTypeById(System.Guid)">
+            <summary>
+            Get job type by Id
+            </summary>
+            <param name="id">Job Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.IScheduledJobManager.GetJobInstanceById(System.Guid)">
+            <summary>
+            Get job instance by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Logging.JsonLayout">
+            <summary>
+            Json layout for scheduled jobs logging
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Logging.JsonLayout.ActivateOptions">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Logging.JsonLayout.Format(System.IO.TextWriter,log4net.Core.LoggingEvent)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Scheduler.ScheduledJobManager">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Scheduler.ScheduledJobManager.EnqueueAllAsync">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Scheduler.ScheduledJobManager.RunJobAsync(System.Guid,System.Guid,System.Nullable{System.Int64},System.Threading.CancellationToken)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Scheduler.ScheduledJobManager.GetJobTypeById(System.Guid)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Scheduler.ScheduledJobManager.GetJobInstanceById(System.Guid)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Services.ScheduledJobs.Dto.StartJobInput">
+            <summary>
+            Start scheduled job input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Scheduler.Services.ScheduledJobs.Dto.StartJobInput.JobId">
+            <summary>
+            Job Id
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Services.ScheduledJobs.Dto.StartJobResponse">
+            <summary>
+            Start scheduled job response
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Scheduler.Services.ScheduledJobs.Dto.StartJobResponse.JobExecutionId">
+            <summary>
+            Job execution Id
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobAppService">
+            <summary>
+            Scheduled Job application service
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobAppService.#ctor(Abp.Domain.Repositories.IRepository{Shesha.IO.Scheduler.Domain.ScheduledJob,System.Guid},Shesha.IO.Scheduler.IScheduledJobManager,Abp.Domain.Repositories.IRepository{Shesha.IO.Scheduler.Domain.ScheduledJob,System.Guid})">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobAppService.StartJobAsync(Shesha.IO.Scheduler.Services.ScheduledJobs.Dto.StartJobInput,System.Threading.CancellationToken)">
+            <summary>
+            Run scheduled job
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobAppService.EnqueueAll">
+            <summary>
+            Enqueue all jobs using Hangfire
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobAppService.RunTriggerAsync(System.Guid,System.Threading.CancellationToken,System.String)">
+            <summary>
+            Run scheduled job trigger
+            </summary>
+            <param name="triggerId">Trigger Id</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <param name="jobName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobAppService.BootstrapScheduledJobs">
+            <summary>
+            Bootstraps all scheduled jobs and default CRON triggers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobExecutionAppService.GetEventLogItems(System.Guid)">
+            <summary>
+            Get event log items for the specified job execution
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobExecutionAppService.GetExecutionStatistics(System.Guid)">
+            <summary>
+            Get the execution statistics for the 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobExecutionAppService.DownloadLogFileAsync(System.Guid)">
+            <summary>
+            Download log file of the job execution
+            </summary>
+            <param name="id">Id of the scheduled job execution</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobTriggerAppService">
+            <summary>
+            Scheduled Job Trigger application service
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.Services.ScheduledJobs.ScheduledJobTriggerAppService.#ctor(Abp.Domain.Repositories.IRepository{Shesha.IO.Scheduler.Domain.ScheduledJobTrigger,System.Guid})">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="repository"></param>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.SheshaSchedulerModule.Initialize">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Scheduler.SheshaSchedulerModule.PreInitialize">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Scheduler.SignalR.EventLogItem">
+            <summary>
+            Represents event log item logged by <see cref="T:Shesha.IO.Scheduler.SignalR.SignalrAppender"/>
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Scheduler.SignalR.EventLogItem.Message">
+            <summary>
+            Logged message
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Scheduler.SignalR.EventLogItem.TimeStamp">
+            <summary>
+            Event timestamp
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Scheduler.SignalR.EventLogItem.Level">
+            <summary>
+            Level (info/warn/error)
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.SignalR.EventLogItem.#ctor(log4net.Core.LoggingEvent)">
+            <summary>
+            Creates new 
+            </summary>
+            <param name="loggingEvent"></param>
+        </member>
+        <member name="F:Shesha.IO.Scheduler.SignalR.SignalrAppender.GroupName">
+            <summary>
+            Name of the signalR group
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.SignalR.SignalrAppender.#ctor(Microsoft.AspNetCore.SignalR.IHubContext{Shesha.IO.Scheduler.SignalR.SignalrAppenderHub},System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="hub"></param>
+            <param name="groupName"></param>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.SignalR.SignalrAppender.Append(log4net.Core.LoggingEvent)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Scheduler.SignalR.SignalrAppenderHub">
+            <summary>
+            SignalR appender hub, is used for real-time job log
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.SignalR.SignalrAppenderHub.JoinGroup(System.String)">
+            <summary>
+            Join group
+            </summary>
+            <param name="groupName">Name of the group</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Scheduler.SignalR.SignalrAppenderHub.LeaveGroup(System.String)">
+            <summary>
+            Leave group
+            </summary>
+            <param name="groupName">Name of the group</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

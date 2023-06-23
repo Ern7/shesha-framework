@@ -12,7 +12,7 @@ using Shesha.Domain.Enums;
 using Shesha.DynamicEntities.Cache;
 using Shesha.DynamicEntities.Dtos;
 using Shesha.Metadata;
-using Shesha.NHibernate.UoW;
+using Shesha.IO.NHibernate.UoW;
 using Xunit;
 using Shesha.Configuration.Runtime;
 using Abp.Runtime.Caching;

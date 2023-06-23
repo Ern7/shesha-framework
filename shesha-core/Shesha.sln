@@ -7,56 +7,56 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AFAA0841-BD9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F10AA149-2626-486E-85BB-9CD5365F3016}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Core", "src\Shesha.Core\Shesha.Core.csproj", "{0FA75A5B-AB83-4FD0-B545-279774C01E87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Core", "src\Shesha.IO.Core\Shesha.IO.Core.csproj", "{0FA75A5B-AB83-4FD0-B545-279774C01E87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Application", "src\Shesha.Application\Shesha.Application.csproj", "{3870C648-4AEA-4B85-BA3F-F2F63B96136A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Application", "src\Shesha.IO.Application\Shesha.IO.Application.csproj", "{3870C648-4AEA-4B85-BA3F-F2F63B96136A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Tests", "test\Shesha.Tests\Shesha.Tests.csproj", "{0D4C5D00-C144-4213-A007-4B8944113AB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Web.Host", "src\Shesha.Web.Host\Shesha.Web.Host.csproj", "{38E184BD-E874-4633-A947-AED4FDB73F40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Web.Host", "src\Shesha.IO.Web.Host\Shesha.IO.Web.Host.csproj", "{38E184BD-E874-4633-A947-AED4FDB73F40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Web.Core", "src\Shesha.Web.Core\Shesha.Web.Core.csproj", "{22CFE0D2-8DCA-42D7-AD7D-784C3862493F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Web.Core", "src\Shesha.IO.Web.Core\Shesha.IO.Web.Core.csproj", "{22CFE0D2-8DCA-42D7-AD7D-784C3862493F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Web.FormsDesigner", "src\Shesha.Web.FormsDesigner\Shesha.Web.FormsDesigner.csproj", "{684B7DB0-1CE1-4FEE-870A-E7B2A0B1F15E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Web.FormsDesigner", "src\Shesha.IO.Web.FormsDesigner\Shesha.IO.Web.FormsDesigner.csproj", "{684B7DB0-1CE1-4FEE-870A-E7B2A0B1F15E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.NHibernate", "src\Shesha.NHibernate\Shesha.NHibernate.csproj", "{9088F6F3-47EB-4C10-813D-EA6161796380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.NHibernate", "src\Shesha.IO.NHibernate\Shesha.IO.NHibernate.csproj", "{9088F6F3-47EB-4C10-813D-EA6161796380}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Framework", "src\Shesha.Framework\Shesha.Framework.csproj", "{2B80EFED-CB47-4EDC-976E-F764C63C0F6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Framework", "src\Shesha.IO.Framework\Shesha.IO.Framework.csproj", "{2B80EFED-CB47-4EDC-976E-F764C63C0F6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.AzureAD", "src\Shesha.AzureAD\Shesha.AzureAD.csproj", "{F359F7A8-FD79-4BAC-B8F9-FC9444604054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.AzureAD", "src\Shesha.IO.AzureAD\Shesha.IO.AzureAD.csproj", "{F359F7A8-FD79-4BAC-B8F9-FC9444604054}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sms", "Sms", "{2062CE98-BD69-406F-B7FB-027EB9340E9B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Sms.BulkSms", "src\Shesha.Sms.BulkSms\Shesha.Sms.BulkSms.csproj", "{2590A1D9-CDA4-4DC0-B8AF-C05F0D3098AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Sms.BulkSms", "src\Shesha.IO.Sms.BulkSms\Shesha.IO.Sms.BulkSms.csproj", "{2590A1D9-CDA4-4DC0-B8AF-C05F0D3098AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Sms.Clickatell", "src\Shesha.Sms.Clickatell\Shesha.Sms.Clickatell.csproj", "{18CA4C5D-DFA1-420B-A379-50D7A74A71BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Sms.Clickatell", "src\Shesha.IO.Sms.Clickatell\Shesha.IO.Sms.Clickatell.csproj", "{18CA4C5D-DFA1-420B-A379-50D7A74A71BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Sms.SmsPortal", "src\Shesha.Sms.SmsPortal\Shesha.Sms.SmsPortal.csproj", "{DBC93634-5B8A-4E32-AF3B-25140A257606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Sms.SmsPortal", "src\Shesha.IO.Sms.SmsPortal\Shesha.IO.Sms.SmsPortal.csproj", "{DBC93634-5B8A-4E32-AF3B-25140A257606}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Sms.Xml2Sms", "src\Shesha.Sms.Xml2Sms\Shesha.Sms.Xml2Sms.csproj", "{60767C59-58D8-45E1-8287-7C0D6E00DFE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Sms.Xml2Sms", "src\Shesha.IO.Sms.Xml2Sms\Shesha.IO.Sms.Xml2Sms.csproj", "{60767C59-58D8-45E1-8287-7C0D6E00DFE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Elmah", "src\Shesha.Elmah\Shesha.Elmah.csproj", "{CC013418-4BDE-4D1D-93C9-7065C865838C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Elmah", "src\Shesha.IO.Elmah\Shesha.IO.Elmah.csproj", "{CC013418-4BDE-4D1D-93C9-7065C865838C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Firebase", "src\Shesha.Firebase\Shesha.Firebase.csproj", "{0475F31F-E3E0-4F34-B677-B3712756CD5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Firebase", "src\Shesha.IO.Firebase\Shesha.IO.Firebase.csproj", "{0475F31F-E3E0-4F34-B677-B3712756CD5C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Import", "src\Shesha.Import\Shesha.Import.csproj", "{835F8022-4918-4BD9-83EB-A4C6EACBF942}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Import", "src\Shesha.IO.Import\Shesha.IO.Import.csproj", "{835F8022-4918-4BD9-83EB-A4C6EACBF942}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Ldap", "src\Shesha.Ldap\Shesha.Ldap.csproj", "{ED50471C-95DB-4CBB-8F99-028C76C27CDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Ldap", "src\Shesha.IO.Ldap\Shesha.IO.Ldap.csproj", "{ED50471C-95DB-4CBB-8F99-028C76C27CDD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.Scheduler", "src\Shesha.Scheduler\Shesha.Scheduler.csproj", "{26E40397-1D7F-4C4C-846C-3F3B46408054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.Scheduler", "src\Shesha.IO.Scheduler\Shesha.IO.Scheduler.csproj", "{26E40397-1D7F-4C4C-846C-3F3B46408054}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{231B88C8-DA14-45B9-ACC9-BE08151ED28D}"
 	ProjectSection(SolutionItems) = preProject
 		common.props = common.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.MongoRepository", "src\Shesha.MongoRepository\Shesha.MongoRepository.csproj", "{6A20EB25-A7AC-45D4-8965-67EB190F862A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.MongoRepository", "src\Shesha.IO.MongoRepository\Shesha.IO.MongoRepository.csproj", "{6A20EB25-A7AC-45D4-8965-67EB190F862A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.RestSharp", "src\Shesha.RestSharp\Shesha.RestSharp.csproj", "{9B1081F8-9C48-4F2B-9944-E8B2BC231461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.RestSharp", "src\Shesha.IO.RestSharp\Shesha.IO.RestSharp.csproj", "{9B1081F8-9C48-4F2B-9944-E8B2BC231461}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.GraphQL", "src\Shesha.GraphQL\Shesha.GraphQL.csproj", "{5CD8D75B-DDF6-444D-81A8-92346BB65B86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.GraphQL", "src\Shesha.IO.GraphQL\Shesha.IO.GraphQL.csproj", "{5CD8D75B-DDF6-444D-81A8-92346BB65B86}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.FluentMigrator", "src\Shesha.FluentMigrator\Shesha.FluentMigrator.csproj", "{2A550F70-7843-4188-BD57-C994E0D27DA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shesha.IO.FluentMigrator", "src\Shesha.IO.FluentMigrator\Shesha.IO.FluentMigrator.csproj", "{2A550F70-7843-4188-BD57-C994E0D27DA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

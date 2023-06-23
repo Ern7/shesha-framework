@@ -4,7 +4,7 @@ using Shesha.Domain.Enums;
 using Shesha.Otp;
 using Shesha.Otp.Configuration;
 using Shesha.Otp.Dto;
-using Shesha.Sms;
+using Shesha.IO.Application.Sms;
 using Shouldly;
 using System;
 using System.Collections.Generic;

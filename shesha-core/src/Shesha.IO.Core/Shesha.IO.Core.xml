@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Shesha.AppVersionHelper">
+            <summary>
+            Central point for application version.
+            </summary>
+        </member>
+        <member name="F:Shesha.AppVersionHelper.Version">
+            <summary>
+            Gets current version of the application.
+            It's also shown in the web page.
+            </summary>
+        </member>
+        <member name="P:Shesha.AppVersionHelper.ReleaseDate">
+            <summary>
+            Gets release (last build) date of the application.
+            It's shown in the web page.
+            </summary>
+        </member>
+        <member name="M:Shesha.Authorization.ShaPermissionChecker.#ctor(Abp.Domain.Repositories.IRepository{Shesha.Domain.Person,System.Guid},Abp.Domain.Repositories.IRepository{Shesha.Domain.ShaRoleAppointedPerson,System.Guid},Abp.Domain.Repositories.IRepository{Shesha.Domain.ShaRoleAppointmentEntity,System.Guid})">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Shesha.Domain.Area">
+            <summary>
+            This class is supposed to be replaced by the Site entity
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.DeviceRegistration.Person">
+            <summary>
+            Mobile User
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.DeviceRegistration.DeviceRegistrationId">
+            <summary>
+            Registration Token
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.DeviceRegistration.AppId">
+            <summary>
+            Application ID
+            </summary>
+        </member>
+        <member name="T:Shesha.Domain.Enums.RefListSecurityClassification">
+            <summary>
+            Security classification
+            </summary>
+        </member>
+        <member name="F:Shesha.Domain.Enums.RefListSecurityClassification.Public">
+            <summary>
+            Available to everyone
+            </summary>
+        </member>
+        <member name="F:Shesha.Domain.Enums.RefListSecurityClassification.Restricted">
+            <summary>
+            Restricted
+            </summary>
+        </member>
+        <member name="F:Shesha.Domain.Enums.RefListSecurityClassification.Confidential">
+            <summary>
+            Confidential
+            </summary>
+        </member>
+        <member name="F:Shesha.Domain.Enums.RefListSecurityClassification.Secret">
+            <summary>
+            Secret
+            </summary>
+        </member>
+        <member name="F:Shesha.Domain.Enums.RefListSecurityClassification.TopSecret">
+            <summary>
+            Top secret
+            </summary>
+        </member>
+        <member name="T:Shesha.Domain.Facility">
+            <summary>
+            This class is supposed to be replaced by the Site entity
+            </summary>
+        </member>
+        <member name="T:Shesha.Domain.HostRoleAndUserBuilder">
+            <summary>
+            Role and user builder
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Sender">
+            <summary>
+            Person who sent this message
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Recipient">
+            <summary>
+            Recipient (person) of the message
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.SendType">
+            <summary>
+            Send type (email/sms/push etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.RecipientText">
+            <summary>
+            Recipient text (email address/mobile number etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.SenderText">
+            <summary>
+            Sender text (email address/mobile number etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Subject">
+            <summary>
+            Subject of the message
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Body">
+            <summary>
+            Message body
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Template">
+            <summary>
+            Template that was used for message generation
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Notification">
+            <summary>
+            Notification
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.SendDate">
+            <summary>
+            Date and time of last attempt to send the message
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.TryCount">
+            <summary>
+            Number of attempt to send the message
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Status">
+            <summary>
+            Status (outgoing/sent/failed etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Direction">
+            <summary>
+            Direction (outgoing/incoming)
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.ErrorMessage">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessage.Cc">
+            <summary>
+            CC emails
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessageAttachment.FileName">
+            <summary>
+            Name of the file, is used for overriding of the File's name
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessageAttachment.File">
+            <summary>
+            Stored file
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.NotificationMessageAttachment.Message">
+            <summary>
+            Stored file
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.OrganisationBase`3.Parent">
+            <summary>
+            Parent organisation
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.OrganisationBase`3.PrimaryAddress">
+            <summary>
+            Primary Address
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.OrganisationBase`3.PrimaryContact">
+            <summary>
+            Primary contact
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.Person.Initials">
+            <summary>
+            Initials override. If empty, the first letter of FirstName is taken.
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.Person.CustomShortName">
+            <summary>
+            Custom short name (overrides calculated short name)
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.Person.FullName">
+            <summary>
+            Calcuated property in the following format: FirstName + ' ' + LastName
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.Person.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.Person.WorkAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.Person.User">
+            <summary>
+            User record, may be null for non registered users
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.QuestionAssignment.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.QuestionAssignment.SelectedQuestion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.QuestionAssignment.Answer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.QuestionAssignment.TenantId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Shesha.Domain.RelationshipEntityBase`1">
+            <summary>
+            Base class for implementation of entities that represents a relationship between two other entities.
+            Should inherit and implement the properties that refer to the other entities.
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.SecurityQuestion.Question">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Shesha.Domain.SecurityQuestion.TenantId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Shesha.Extensions.PersonExtensions">
+            <summary>
+            Person extensions
+            </summary>
+        </member>
+        <member name="M:Shesha.Extensions.PersonExtensions.GetEmail(Shesha.Domain.Person)">
+            <summary>
+            Get email of the specified <paramref name="person"/>
+            </summary>
+            <param name="person">Person</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Extensions.PersonExtensions.GetMobileNumber(Shesha.Domain.Person)">
+            <summary>
+            Get mobile number of the specified <paramref name="person"/>
+            </summary>
+            <param name="person">Person</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.Extensions.PersonExtensions.GetShortName(Shesha.Domain.Person)">
+            <summary>
+            Get short name of person
+            </summary>
+            <param name="person">Person</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Interfaces.IClassDropdownFilter">
+            <summary>
+            Filters classes for the dropdown element
+            </summary>
+        </member>
+        <member name="M:Shesha.Interfaces.IClassDropdownFilter.GetFiltered(System.Collections.Generic.List{System.Type},Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata)">
+            <summary>
+            Returns filtered classes
+            </summary>
+            <param name="types"></param>
+            <param name="modelMetadata"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Shesha.Timing.AppTimes.StartupTime">
+            <summary>
+            Gets the startup time of the application.
+            </summary>
+        </member>
+        <member name="T:Shesha.Web.WebContentDirectoryFinder">
+            <summary>
+            This class is used to find root path of the web project in;
+            unit tests (to find views) and entity framework core command line commands (to find conn string).
+            </summary>
+        </member>
+    </members>
+</doc>

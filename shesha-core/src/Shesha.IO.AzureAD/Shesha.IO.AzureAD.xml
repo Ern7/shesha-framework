@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.AzureAD</name>
+    </assembly>
+    <members>
+        <member name="T:Shesha.IO.AzureAD.Authentication.AzureADAuthenticationSource`2">
+            <summary>
+            Implements <see cref="T:Abp.Authorization.Users.IExternalAuthenticationSource`2"/> to authenticate users from AzureAD.
+            Extend this class using application's User and Tenant classes as type parameters.
+            Also, all needed methods can be overridden and changed upon your needs.
+            </summary>
+            <typeparam name="TTenant">Tenant type</typeparam>
+            <typeparam name="TUser">User type</typeparam>
+        </member>
+        <member name="F:Shesha.IO.AzureAD.Authentication.AzureADAuthenticationSource`2.SourceName">
+            <summary>
+            LDAP
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.AzureAD.Authentication.AzureADAuthenticationSource`2.TryAuthenticateAsync(System.String,System.String,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Shesha.IO.AzureAD.Configuration.AzureADSettingNames">
+            <summary>
+            Contains consts for LDAP setting names.
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.AzureAD.Configuration.AzureADSettingNames.IsEnabled">
+            <summary>
+            Shesha.IO.AzureAD.IsEnabled
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.AzureAD.Configuration.AzureADSettingNames.InstanceUrl">
+            <summary>
+            Shesha.IO.AzureAD.InstanceUrl
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.AzureAD.Configuration.AzureADSettingNames.Tenant">
+            <summary>
+            Shesha.IO.AzureAD.Tenant
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.AzureAD.Configuration.AzureADSettingNames.AppIdUri">
+            <summary>
+            Shesha.IO.AzureAD.AppIdUri
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.AzureAD.Configuration.AzureADSettingNames.ClientApplicationId">
+            <summary>
+            Shesha.IO.AzureAD.ClientApplicationId
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.AzureAD.Configuration.IAzureADSettings">
+            <summary>
+            AzureAD settings
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.AzureAD.Configuration.IAzureADSettings.IsEnabled">
+            <summary>
+            Is enabled
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.AzureAD.Configuration.IAzureADSettings.InstanceUrl">
+            <summary>
+            Instance Url
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.AzureAD.Configuration.IAzureADSettings.Tenant">
+            <summary>
+            Tenant
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.AzureAD.Configuration.IAzureADSettings.AppIdUri">
+            <summary>
+            App Id Uri
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.AzureAD.Configuration.IAzureADSettings.ClientApplicationId">
+            <summary>
+            Client Application Id
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.AzureAD.Configuration.SheshaAzureADConfigurationExtensions">
+            <summary>
+            Extension methods for module zero configurations.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.AzureAD.Configuration.SheshaAzureADConfigurationExtensions.SheshaAzureAD(Abp.Configuration.Startup.IModuleConfigurations)">
+            <summary>
+            Configures Shesha AzureAD module.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.AzureAD.SheshaAzureADModule">
+            <summary>
+            This module extends module zero to add AzureAD authentication.
+            </summary>
+        </member>
+    </members>
+</doc>

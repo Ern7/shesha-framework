@@ -170,7 +170,7 @@ namespace Shesha.Tests.DynamicEntities
                     {
                         Name = area1PropName,
                         DataType = DataTypes.EntityReference,
-                        EntityType = "Shesha.Core.Area",
+                        EntityType = "Shesha.IO.Core.Area",
                     });
 
                     var r = result as List<EntityPropertyDto>;

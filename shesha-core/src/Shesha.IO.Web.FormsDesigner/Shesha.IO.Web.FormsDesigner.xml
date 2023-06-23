@@ -1,0 +1,891 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.Web.FormsDesigner</name>
+    </assembly>
+    <members>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Domain.ConfigurableComponent">
+            <summary>
+            Generic configurable component. Is used mostly to store configuration of the independent front-end components (e.g. sidebar menu, theme)
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Domain.ConfigurableComponent.ItemType">
+            inheritedDoc
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Domain.ConfigurableComponent.Settings">
+            <summary>
+            Form markup
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration">
+            <summary>
+            Form configuration
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration.Markup">
+            <summary>
+            Form markup
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration.ModelType">
+            <summary>
+            ModelType
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration.IsTemplate">
+            <summary>
+            If true, indeicates that the form is a template
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration.Template">
+            <summary>
+            Template that was used for the form creation
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentDto">
+            <summary>
+            Configurable Component DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentDto.Name">
+            <summary>
+            Form name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentDto.Settings">
+            <summary>
+            Settings in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentDto.CacheMd5">
+            <summary>
+            Cache MD5, is used for client-side caching
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentUpdateSettingsInput">
+            <summary>
+            Update component settings input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentUpdateSettingsInput.Module">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentUpdateSettingsInput.Name">
+            <summary>
+            Component name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentUpdateSettingsInput.IsApplicationSpecific">
+            <summary>
+            If true, indicates that component is application specific
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentUpdateSettingsInput.Settings">
+            <summary>
+            Settings in JSON format
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto">
+            <summary>
+            Create configurable component DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.ModuleId">
+            <summary>
+            Module id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.Name">
+            <summary>
+            Form name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.Label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.Markup">
+            <summary>
+            Markup in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.ModelType">
+            <summary>
+            Type of the form model
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.Type">
+            <summary>
+            Type of form (index, detail etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.TemplateId">
+            <summary>
+            Template that is used for the form creation
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateConfigurableComponentDto.IsTemplate">
+            <summary>
+            If true, indeicates that the form is a template
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurableComponentByIdInput.Id">
+            <summary>
+            Form configuration id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurableComponentByNameInput.Module">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurableComponentByNameInput.Name">
+            <summary>
+            Component name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurableComponentByNameInput.IsApplicationSpecific">
+            <summary>
+            If true, indicates that component is application specific
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurableComponentDto">
+            <summary>
+            Update Configurable Component DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurableComponentDto.Label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurableComponentDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurableComponentDto.Markup">
+            <summary>
+            Markup in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurableComponentDto.ModelType">
+            <summary>
+            Type of the form model
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.CancelVersionInput">
+            <summary>
+            Cancel version input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CancelVersionInput.Id">
+            <summary>
+            Id of the current version
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.CopyInput">
+            <summary>
+            Copy for input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CopyInput.ItemId">
+            <summary>
+            Item id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CopyInput.ModuleId">
+            <summary>
+            Module Id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CopyInput.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CopyInput.Label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CopyInput.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto">
+            <summary>
+            Form configuration DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.ModuleId">
+            <summary>
+            Module id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.Name">
+            <summary>
+            Form name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.Label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.Markup">
+            <summary>
+            Markup in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.ModelType">
+            <summary>
+            Type of the form model
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.Type">
+            <summary>
+            Type of form (index, detail etc)
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.TemplateId">
+            <summary>
+            Template that is used for the form creation
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto.IsTemplate">
+            <summary>
+            If true, indeicates that the form is a template
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.CreateNewVersionInput">
+            <summary>
+            Create new version input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.CreateNewVersionInput.Id">
+            <summary>
+            Id of the current version
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.DesignerAutomapperProfile">
+            <summary>
+            Form Designer Automapper profile
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.ExportConfigurationInput">
+            <summary>
+            Export form configuration import
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ExportConfigurationInput.Filter">
+            <summary>
+            Filter string in JsonLogic format
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto">
+            <summary>
+            Form configuration DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.ModuleId">
+            <summary>
+            Module Id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.OriginId">
+            <summary>
+            Origin id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.Module">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.Name">
+            <summary>
+            Form name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.Label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.Markup">
+            <summary>
+            Markup in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.ModelType">
+            <summary>
+            Type of the form model
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.VersionNo">
+            <summary>
+            Version number
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.IsLastVersion">
+            <summary>
+            If true, indicates that this is a last version of the form
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.VersionStatus">
+            <summary>
+            Version status
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormConfigurationDto.CacheMd5">
+            <summary>
+            Cache MD5, is used for client-side caching
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.FormDto">
+            <summary>
+            Form DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormDto.Path">
+            <summary>
+            Form path/id is used to identify a form
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormDto.Name">
+            <summary>
+            Form name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormDto.Markup">
+            <summary>
+            Form markup (components) in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormDto.ModelType">
+            <summary>
+            Type of the form model
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormDto.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.FormListItemDto">
+            <summary>
+            Forms short info, is used for lists (e.g. autocomplete)
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormListItemDto.Path">
+            <summary>
+            Form path/id is used to identify a form
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormListItemDto.Name">
+            <summary>
+            Form name
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.FormUpdateMarkupInput">
+            <summary>
+            Form update markup input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.FormUpdateMarkupInput.Markup">
+            <summary>
+            Form markup (components) in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetFormByFullNameInput.Module">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetFormByFullNameInput.Name">
+            <summary>
+            Form name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetFormByFullNameInput.Version">
+            <summary>
+            Form version number. Last published form is used when missing
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetFormByIdInput.Id">
+            <summary>
+            Form configuration id
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.ImportFormJsonInput">
+            <summary>
+            Import form JSON input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ImportFormJsonInput.ItemId">
+            <summary>
+            Form version Id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.ImportFormJsonInput.File">
+            <summary>
+            File content
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.MoveToModuleInput">
+            <summary>
+            Move item to module input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.MoveToModuleInput.ItemId">
+            <summary>
+            Item id
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.MoveToModuleInput.ModuleId">
+            <summary>
+            Module Id
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.PublishConfigurationInput">
+            <summary>
+            Publish form configuration import
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.PublishConfigurationInput.Filter">
+            <summary>
+            Filter string in JsonLogic format
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurationStatusInput">
+            <summary>
+            Update configuration status import
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurationStatusInput.Filter">
+            <summary>
+            Filter string in JsonLogic format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurationStatusInput.Status">
+            <summary>
+            New status
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.UpdateFormConfigurationDto">
+            <summary>
+            Form configuration DTO
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateFormConfigurationDto.Label">
+            <summary>
+            Label
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateFormConfigurationDto.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateFormConfigurationDto.Markup">
+            <summary>
+            Markup in JSON format
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.UpdateFormConfigurationDto.ModelType">
+            <summary>
+            Type of the form model
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurationItemInputBase">
+            <summary>
+            Base class of the `get configuration item` input
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurationItemInputBase.Md5">
+            <summary>
+            MD5 of the item. Is used for the client side caching.
+            If specified, the application should compare the value received from the client with a local cache and return http response with code 304 (not changed)
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Exceptions.ConfigurableComponentNotFoundException">
+            <summary>
+            Configurable Component not found exception
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Exceptions.FormNotFoundException">
+            <summary>
+            Form not found exception
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService">
+            <summary>
+            Configurable components application service
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService.#ctor(Abp.Domain.Repositories.IRepository{Shesha.IO.Web.FormsDesigner.Domain.ConfigurableComponent,System.Guid},Abp.Domain.Repositories.IRepository{Shesha.Domain.ConfigurationItems.Module,System.Guid},Abp.Domain.Repositories.IRepository{Shesha.Domain.FrontEndApp,System.Guid},Shesha.ConfigurationItems.IConfigurationFrameworkRuntime,Shesha.ConfigurationItems.Cache.IConfigurationItemClientSideCache)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService.GetByNameAsync(Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurableComponentByNameInput)">
+            <summary>
+            Get current component configuration by name
+            </summary>
+            <returns></returns>
+            <exception cref="T:Shesha.IO.Web.FormsDesigner.Exceptions.ConfigurableComponentNotFoundException"></exception>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService.UpdateSettingsAsync(Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentUpdateSettingsInput)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService.GetModuleAsync(System.String)">
+            <summary>
+            Ger module by name
+            </summary>
+            <param name="moduleName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService.GetComponentInput.Module">
+            <summary>
+            Module name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService.GetComponentInput.Name">
+            <summary>
+            Component name
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentAppService.GetComponentInput.FrontEndApplication">
+            <summary>
+            Application key
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentManager">
+            <summary>
+            Configurable component manager
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.ConfigurableComponentManager.UpdateStatusAsync(Shesha.IO.Web.FormsDesigner.Domain.ConfigurableComponent,Shesha.Domain.ConfigurationItems.ConfigurationItemVersionStatus)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentExport">
+            <summary>
+            Configurable component export
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentExport.ExportItemAsync(System.Guid)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentExport.ExportItemAsync(Shesha.Domain.ConfigurationItemBase)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentExport.WriteToJsonAsync(Shesha.ConfigurationItems.Distribution.DistributedConfigurableItemBase,System.IO.Stream)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentImport">
+            <summary>
+            Configurable component import
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentImport.ImportItemAsync(Shesha.ConfigurationItems.Distribution.DistributedConfigurableItemBase,Shesha.ConfigurationItems.Distribution.IConfigurationItemsImportContext)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentImport.ReadFromJsonAsync(System.IO.Stream)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.ConfigurableComponentImport.ImportComponentAsync(Shesha.IO.Web.FormsDesigner.Services.Distribution.DistributedConfigurableComponent,Shesha.ConfigurationItems.Distribution.IConfigurationItemsImportContext)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.DistributedConfigurableComponent">
+            <summary>
+            Distributed form
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Services.Distribution.DistributedConfigurableComponent.Settings">
+            <summary>
+            Settings
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.IConfigurableComponentExport">
+            <summary>
+            Configurable component export
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.IConfigurableComponentImport">
+            <summary>
+            Configurable component import
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.DistributedFormConfiguration">
+            <summary>
+            Distributed form
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Services.Distribution.DistributedFormConfiguration.Markup">
+            <summary>
+            Form markup
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Web.FormsDesigner.Services.Distribution.DistributedFormConfiguration.ModelType">
+            <summary>
+            ModelType
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationExport">
+            <summary>
+            Form configuration export
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationExport.ExportItemAsync(System.Guid)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationExport.ExportItemAsync(Shesha.Domain.ConfigurationItemBase)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationExport.WriteToJsonAsync(Shesha.ConfigurationItems.Distribution.DistributedConfigurableItemBase,System.IO.Stream)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationImport">
+            <summary>
+            Form configuration import
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationImport.ImportItemAsync(Shesha.ConfigurationItems.Distribution.DistributedConfigurableItemBase,Shesha.ConfigurationItems.Distribution.IConfigurationItemsImportContext)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationImport.ReadFromJsonAsync(System.IO.Stream)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.Distribution.FormConfigurationImport.ImportFormAsync(Shesha.IO.Web.FormsDesigner.Services.Distribution.DistributedFormConfiguration,Shesha.ConfigurationItems.Distribution.IConfigurationItemsImportContext)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.IFormConfigurationExport">
+            <summary>
+            Form configuration export
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.Distribution.IFormConfigurationImport">
+            <summary>
+            Form configuration import
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.GetByNameAsync(Shesha.IO.Web.FormsDesigner.Dtos.GetFormByFullNameInput)">
+            <summary>
+            Get current form configuration by name
+            </summary>
+            <returns></returns>
+            <exception cref="T:Shesha.IO.Web.FormsDesigner.Exceptions.FormNotFoundException"></exception>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.UpdateMarkupAsync(Shesha.IO.Web.FormsDesigner.Dtos.FormUpdateMarkupInput)">
+            <summary>
+            Update form markup
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.UpdateStatus(Shesha.IO.Web.FormsDesigner.Dtos.UpdateConfigurationStatusInput)">
+            <summary>
+            Update form status
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.CreateAsync(Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto)">
+            <summary>
+            Create new form configuration
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.CreateNewVersion(Shesha.IO.Web.FormsDesigner.Dtos.CreateNewVersionInput)">
+            <summary>
+            Create new version of form configuration
+            </summary>
+            <exception cref="T:Abp.Runtime.Validation.AbpValidationException"></exception>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.CancelVersion(Shesha.IO.Web.FormsDesigner.Dtos.CancelVersionInput)">
+            <summary>
+            Cancel version
+            </summary>
+            <exception cref="T:Abp.Runtime.Validation.AbpValidationException"></exception>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.GetJson(System.Guid)">
+            <summary>
+            Get form in JSON format
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.ImportJson(Shesha.IO.Web.FormsDesigner.Dtos.ImportFormJsonInput)">
+            <summary>
+            Import JSON
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.UpdateAsync(Shesha.IO.Web.FormsDesigner.Dtos.UpdateFormConfigurationDto)">
+            <summary>
+            Update form configuration
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.DeleteAsync(Abp.Application.Services.Dto.EntityDto{System.Guid})">
+            <summary>
+            Delete form
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.MoveToModuleAsync(Shesha.IO.Web.FormsDesigner.Dtos.MoveToModuleInput)">
+            <summary>
+            Move form to another module
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.CopyAsync(Shesha.ConfigurationItems.Models.CopyItemInput)">
+            <summary>
+            Copy form
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormConfigurationAppService.GetModuleAsync(System.String)">
+            <summary>
+            Ger module by name
+            </summary>
+            <param name="moduleName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.FormManager">
+            <summary>
+            Form manager
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormManager.CreateNewVersionAsync(Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormManager.UpdateStatusAsync(Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration,Shesha.Domain.ConfigurationItems.ConfigurationItemVersionStatus)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormManager.DeleteAllVersionsAsync(System.Guid)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormManager.MoveToModuleAsync(Shesha.IO.Web.FormsDesigner.Dtos.MoveToModuleInput)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.FormManager.CreateAsync(Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.IConfigurableComponentAppService">
+            <summary>
+            Configurable component application service
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IConfigurableComponentAppService.GetByNameAsync(Shesha.IO.Web.FormsDesigner.Dtos.GetConfigurableComponentByNameInput)">
+            <summary>
+            Get component
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IConfigurableComponentAppService.UpdateSettingsAsync(Shesha.IO.Web.FormsDesigner.Dtos.ConfigurableComponentUpdateSettingsInput)">
+            <summary>
+            Update component settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.IConfigurableComponentManager">
+            <summary>
+            Configurable component manager
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IConfigurableComponentManager.CreateNewVersionAsync(Shesha.IO.Web.FormsDesigner.Domain.ConfigurableComponent)">
+            <summary>
+            Create new version of the component
+            </summary>
+            <param name="component">Component</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IConfigurableComponentManager.UpdateStatusAsync(Shesha.IO.Web.FormsDesigner.Domain.ConfigurableComponent,Shesha.Domain.ConfigurationItems.ConfigurationItemVersionStatus)">
+            <summary>
+            Update version status
+            </summary>
+            <param name="component">Component</param>
+            <param name="status">New status</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Web.FormsDesigner.Services.IFormManager">
+            <summary>
+            Form manager
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IFormManager.CreateNewVersionAsync(Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration)">
+            <summary>
+            Create new version of the form
+            </summary>
+            <param name="form">Form configuration</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IFormManager.UpdateStatusAsync(Shesha.IO.Web.FormsDesigner.Domain.FormConfiguration,Shesha.Domain.ConfigurationItems.ConfigurationItemVersionStatus)">
+            <summary>
+            Update version status
+            </summary>
+            <param name="form">Form</param>
+            <param name="status">New status</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IFormManager.DeleteAllVersionsAsync(System.Guid)">
+            <summary>
+            Delete all versions of form with specified <paramref name="id"/>
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IFormManager.MoveToModuleAsync(Shesha.IO.Web.FormsDesigner.Dtos.MoveToModuleInput)">
+            <summary>
+            Move form to another module
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IFormManager.CopyAsync(Shesha.ConfigurationItems.Models.CopyItemInput)">
+            <summary>
+            Copy form
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Web.FormsDesigner.Services.IFormManager.CreateAsync(Shesha.IO.Web.FormsDesigner.Dtos.CreateFormConfigurationDto)">
+            <summary>
+            Create new form
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

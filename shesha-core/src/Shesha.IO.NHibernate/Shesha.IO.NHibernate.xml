@@ -1,0 +1,880 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.NHibernate</name>
+    </assembly>
+    <members>
+        <member name="M:Shesha.CodeGeneration.MigrationGenerator.GenerateTableMigration(System.Type,Shesha.CodeGeneration.DdlStatement,System.Func{System.Reflection.PropertyInfo,System.Boolean})">
+            <summary>
+            Generate migration 
+            </summary>
+            <param name="entityType"></param>
+            <param name="ddlStatement"></param>
+            <param name="propertyFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.CodeGeneration.MigrationGenerator.ProcessFrameworkColumns(System.Text.StringBuilder,System.Collections.Generic.List{System.Reflection.PropertyInfo},Shesha.CodeGeneration.DdlStatement)">
+            <summary>
+            Process framework helpers and return list of unprocessed properties
+            </summary>
+            <param name="sb"></param>
+            <param name="properties"></param>
+            <param name="statement"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Configuration.Startup.ShaNHibernateConfigurationExtensions">
+            <summary>
+            Defines extension methods to <see cref="T:Abp.Configuration.Startup.IModuleConfigurations"/> to allow to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="M:Shesha.Configuration.Startup.ShaNHibernateConfigurationExtensions.ShaNHibernate(Abp.Configuration.Startup.IModuleConfigurations)">
+            <summary>
+            Used to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="T:Shesha.JsonLogic.HqlOperators">
+            <summary>
+            JsonLogic operators
+            </summary>
+        </member>
+        <member name="T:Shesha.JsonLogic.IJsonLogic2HqlConverter">
+            <summary>
+            Json Logic to HQL converter
+            </summary>
+        </member>
+        <member name="M:Shesha.JsonLogic.IJsonLogic2HqlConverter.Convert(Newtonsoft.Json.Linq.JToken,Shesha.JsonLogic.JsonLogic2HqlConverterContext)">
+            <summary>
+            Convert Json Logic to HQL
+            </summary>
+            <param name="rule"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.JsonLogic.IJsonLogic2HqlConverter.GetOperation(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Get props of the Json Logic operation
+            </summary>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.JsonLogic.IJsonLogic2HqlConverter.ResolveVariable(System.String,Shesha.JsonLogic.JsonLogic2HqlConverterContext)">
+            <summary>
+            Resolve variable
+            </summary>
+            <param name="value"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.JsonLogic.JsonLogic2HqlConverter">
+            <summary>
+            HQL Json Logic evaluator. Converts JsonLogic expression to hql
+            </summary>
+        </member>
+        <member name="M:Shesha.JsonLogic.JsonLogic2HqlConverter.GetOperation(Newtonsoft.Json.Linq.JToken)">
+            <summary>
+            Get operation props
+            </summary>
+            <param name="rule"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.JsonLogic.JsonLogic2HqlConverter.ResolveVariable(System.String,Shesha.JsonLogic.JsonLogic2HqlConverterContext)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.JsonLogic.JsonLogic2HqlConverterContext">
+            <summary>
+            Json Logic to HQL converter context
+            </summary>
+        </member>
+        <member name="P:Shesha.JsonLogic.JsonLogic2HqlConverterContext.ParametersPrefix">
+            <summary>
+            Query parameters prefix
+            </summary>
+        </member>
+        <member name="P:Shesha.JsonLogic.JsonLogic2HqlConverterContext.FilterParameters">
+            <summary>
+            List of query parameters
+            </summary>
+        </member>
+        <member name="P:Shesha.JsonLogic.JsonLogic2HqlConverterContext.VariablesResolvers">
+            <summary>
+            Variable resolvers
+            </summary>
+        </member>
+        <member name="P:Shesha.JsonLogic.JsonLogic2HqlConverterContext.FieldsMetadata">
+            <summary>
+            Fields metadata dictionary
+            </summary>
+        </member>
+        <member name="M:Shesha.JsonLogic.JsonLogic2HqlConverterContext.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="parametersPrefix"></param>
+        </member>
+        <member name="M:Shesha.JsonLogic.JsonLogic2HqlConverterContext.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Shesha.JsonLogic.JsonLogic2HqlConverterContext.AddParameter(System.Object)">
+            <summary>
+            Add new parameter and get it's name
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Migrations.M20200623162800">
+            <summary>
+            Saved Filters
+            </summary>
+        </member>
+        <member name="T:Shesha.Migrations.M20201210115000">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration">
+            <summary>
+            Used to configure ABP NHibernate module.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.NhConfiguration">
+            <summary>
+            Used to get and modify NHibernate configuration.
+            You can add mappings to this object.
+            Do not call BuildSessionFactory on it.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.DatabaseType">
+            <summary>
+            Current Database type
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.ConnectionString">
+            <summary>
+            Current connection string
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.UseMsSql(System.String)">
+            <summary>
+            Set MS Sql as a DBMS type
+            </summary>
+            <param name="connectionString">Connection string</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.UseMsSql(System.Func{Microsoft.Extensions.Configuration.IConfigurationRoot,System.String})">
+            <summary>
+            Set MS Sql as a DBMS type
+            </summary>
+            <param name="connectionStringGetter">Connection string factory</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.UseMsSql">
+            <summary>
+            Use MS Sql with default connection string
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.UsePostgreSql(System.String)">
+            <summary>
+            Set PostgreSql as a DBMS type
+            </summary>
+            <param name="connectionString">Connection string</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.UsePostgreSql(System.Func{Microsoft.Extensions.Configuration.IConfigurationRoot,System.String})">
+            <summary>
+            Set PostgreSql as a DBMS type
+            </summary>
+            <param name="connectionStringGetter">Connection string factory</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.UsePostgreSql">
+            <summary>
+            Use PostgreSql with default connection string
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.IShaNHibernateModuleConfiguration.UseDbms(System.Func{Microsoft.Extensions.Configuration.IConfigurationRoot,Shesha.Configuration.DbmsType},System.Func{Microsoft.Extensions.Configuration.IConfigurationRoot,System.String})">
+            <summary>
+            Set DBMS type and connection string
+            </summary>
+            <param name="dbmsTypeGetter">DBMS Type factory</param>
+            <param name="connectionStringGetter">Connection string factory</param>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.NhConfiguration">
+            inheritedDoc
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.DatabaseType">
+            inheritedDoc
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.ConnectionString">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.UseMsSql(System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.UseMsSql(System.Func{Microsoft.Extensions.Configuration.IConfigurationRoot,System.String})">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.UseMsSql">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.UsePostgreSql(System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.UsePostgreSql(System.Func{Microsoft.Extensions.Configuration.IConfigurationRoot,System.String})">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Configuration.ShaNHibernateModuleConfiguration.UsePostgreSql">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.NHibernate.DbPerTenantConnectionStringResolver">
+            <summary>
+            Implements <see cref="T:Abp.MultiTenancy.IDbPerTenantConnectionStringResolver"/> to dynamically resolve
+            connection string for a multi tenant application.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.DbPerTenantConnectionStringResolver.AbpSession">
+            <summary>
+            Reference to the session.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.DbPerTenantConnectionStringResolver.#ctor(Abp.Configuration.Startup.IAbpStartupConfiguration,Abp.Domain.Uow.ICurrentUnitOfWorkProvider,Abp.MultiTenancy.ITenantCache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Shesha.IO.NHibernate.DbPerTenantConnectionStringResolver"/> class.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryExtension.AddPropertyChangeDescription``2(``0,System.String,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Add property change description (replace default description)
+            </summary>
+            <param name="entity">Changed entity</param>
+            <param name="description">Description of changes</param>
+            <param name="property">Changed property</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryExtension.AddPropertyChangeComment``2(``0,System.String,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Add property change comment (will be added after default description)
+            </summary>
+            <param name="entity">Changed entity</param>
+            <param name="description">Comment of changes</param>
+            <param name="property">Changed property</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryExtension.AddPropertyChangeComment(System.Object,System.String,System.String)">
+            <summary>
+            Add property change comment (will be added after default description)
+            </summary>
+            <param name="entity">Changed entity</param>
+            <param name="description">Comment of changes</param>
+            <param name="propertyName">Changed property</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryExtension.AddPropertyChangeDescription(System.Object,System.String,System.String)">
+            <summary>
+            Add property change description (replace default description)
+            </summary>
+            <param name="entity">Changed entity</param>
+            <param name="description">Description of changes</param>
+            <param name="propertyName">Name of changed property</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryExtension.AddHistoryEvent(System.Object,System.String)">
+            <summary>
+             Add entity event
+            </summary>
+            <param name="entity">The entity with which the event occurred</param>
+            <param name="description">Event description</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryExtension.AddHistoryEvent(System.Object,System.String,System.String)">
+            <summary>
+             Add custom entity event
+            </summary>
+            <param name="entity">The entity with which the event occurred</param>
+            <param name="eventName">Event name</param>
+            <param name="description">Event description</param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryExtension.AddHistoryEvent(System.Object,System.String,System.String,System.String)">
+            <summary>
+             Add custom entity event
+            </summary>
+            <param name="entity">The entity with which the event occurred</param>
+            <param name="eventType">Event type</param>
+            <param name="eventName">Event name</param>
+            <param name="description">Event description</param>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.EntityHistory.EntityHistoryHelper">
+            <summary>
+            Entity history helper. Creates and stores changes of entities
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.EntityHistoryHelper.GetPropertyChanges(System.Boolean,Abp.EntityHistory.EntityChange,System.Type,System.Object,System.Collections.Generic.IList{Shesha.IO.NHibernate.Session.SessionExtensions.DirtyPropertyInfo})">
+            <summary>
+            Gets the property changes for this entry.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.EntityHistory.IEntityHistoryHelper.EntityChangeSet">
+            <summary>
+            Set of entity changes
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.EntityHistory.IEntityHistoryHelper.EntityChanges">
+            <summary>
+            List of entity changes
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.IEntityHistoryHelper.AddEntityChange(System.Object)">
+            <summary>
+            Add changes of Entity to the EntityChanges list
+            </summary>
+            <param name="entity">Entity</param>
+            <returns>EntityChange object</returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.IEntityHistoryHelper.CreateEntityChange(System.Object)">
+            <summary>
+            Create EntityChange item for the Entity
+            </summary>
+            <param name="entity">Entity</param>
+            <returns>EntityChange object</returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.IEntityHistoryHelper.CreateEntityChangeSet">
+            <summary>
+            Create entity changes set
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.EntityHistory.NHibernateEntityHistoryStore.#ctor(Abp.Domain.Repositories.IRepository{Abp.EntityHistory.EntityChangeSet,System.Int64},Abp.Domain.Repositories.IRepository{Abp.EntityHistory.EntityChange,System.Int64},Abp.Domain.Repositories.IRepository{Abp.EntityHistory.EntityPropertyChange,System.Int64})">
+            <summary>
+            Creates a new <see cref="T:Shesha.IO.NHibernate.EntityHistory.NHibernateEntityHistoryStore"/>.
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Exceptions.WrongMigrationVersionsFoundException">
+            <summary>
+            Exception that is used to indicate that there are migration with incorrect version numbers
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Exceptions.WrongMigrationVersionsFoundException.Versions">
+            <summary>
+            List of incorrect versions
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Filters.MayHaveTenantFilter">
+            <summary>
+            Add filter MayHaveTenant 
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Filters.MayHaveTenantFilter.GetDefinition">
+            <summary>
+            Returns filter definition
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Filters.MustHaveTenantFilter">
+            <summary>
+            Add filter MustHaveTenant 
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Filters.MustHaveTenantFilter.GetDefinition">
+            <summary>
+            Returns filter definition
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Filters.SoftDeleteFilter">
+            <summary>
+            Add filter SoftDelete 
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Filters.SoftDeleteFilter.GetDefinition">
+            <summary>
+            Returns filter definition
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.IDbmsSpecificConfigurationProvider">
+            <summary>
+            DBMS specific configuration provider
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Interceptors.SheshaNHibernateInterceptor.AddAfterTransactionAction(System.Action)">
+            <summary>
+            Add action that should be executed after completion of the current transaction
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Interceptors.SheshaNHibernateInterceptor.AfterTransactionCompletion(NHibernate.ITransaction)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Linq.AsReferenceListItemNameGenerator">
+            <summary>
+            Implementation of `AsReferenceListItemName` function
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Linq.AsReferenceListItemNameGenerator.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Linq.AsReferenceListItemNameGenerator.BuildHql(System.Reflection.MethodInfo,System.Linq.Expressions.Expression,System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.Expression},NHibernate.Hql.Ast.HqlTreeBuilder,NHibernate.Linq.Visitors.IHqlExpressionVisitor)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Linq.SheshaLinqToHqlGeneratorsRegistry">
+            <summary>
+            Shesha Linq to HQL generator registry. Extends NHibernate linq
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Linq.SheshaNhibernateLinqExtensions">
+            <summary>
+            Shesha NHibernate  Linq extensions
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Linq.SheshaNhibernateLinqExtensions.AsReferenceListItemName``1(``0)">
+            <summary>
+            Convert referencelist item value to text using dbo.Frwk_GetRefListItem() stored function
+            </summary>
+            <param name="value">Value of the reference list item</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Linq.SheshaNhibernateLinqExtensions.AsReferenceListItemName``1(System.Nullable{``0})">
+            <summary>
+            Convert referencelist item value to text using dbo.Frwk_GetRefListItem() stored function
+            </summary>
+            <param name="value">Value of the reference list item</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Maps.Conventions">
+            <summary>
+            Applies global common conventions to the mapped entities. 
+            For clarity configurations set here can be overriden in 
+            an entity's specific mapping file.  For example; The Id 
+            convention here is set to Id but if the Id column 
+            was mapped in the entity's mapping file then the entity's 
+            mapping file configuration will take precedence.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Maps.Conventions.LastCompiledXml">
+            <summary>
+            Last compiled conventions in the xml format
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Maps.NhMappingHelper.IsPersistentProperty(System.Reflection.MemberInfo)">
+            <summary>
+            Returns true if the property is persisted to the DB
+            </summary>
+            <param name="prop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Middlewares.NHibernateSessionPerRequestMiddleware.BeginSession(NHibernate.ISessionFactory,Castle.Core.Logging.ILogger)">
+            <summary>
+            Bind lazy NHibernate sessions for all session factories
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Middlewares.NHibernateSessionPerRequestMiddleware.UnbindLazySessions">
+            <summary>
+            Unbind all lazy NHibernate sessions
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Middlewares.NHibernateSessionPerRequestMiddleware.GetSessionFactories">
+            <summary>
+            Retrieves all ISessionFactory instances via IoC
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.ModuleLocator">
+            <summary>
+            Module locator
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.ModuleLocator.GetModuleName(System.Type)">
+            inheritedDoc
+        </member>
+        <member name="T:Shesha.IO.NHibernate.MsSql.MsSqlConfigurationProvider">
+            <summary>
+            MS Sql configuration provider
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.NhAsyncQueryableExecuter">
+            <summary>
+            Nhibernate queryable async executer. Is used to abstract from NHibernate dependencies
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.PostgreSql.CitextPostgreSqlDriver">
+            <summary>
+            PostgreSql driver that uses `citext` for all string query parameters
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConfigurationProvider">
+            <summary>
+            PostgreSQL configuration provider
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet">
+            <summary>
+            PostgreSql conventions set
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.RootPathConvention">
+            <inheritdoc />
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.SchemaConvention">
+            <inheritdoc />
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.ColumnsConventions">
+            <inheritdoc />
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.ConstraintConventions">
+            <inheritdoc />
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.ForeignKeyConventions">
+            <inheritdoc />
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.IndexConventions">
+            <inheritdoc />
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.SequenceConventions">
+            <inheritdoc />
+        </member>
+        <member name="P:Shesha.IO.NHibernate.PostgreSql.PostgreSqlConventionsSet.AutoNameConventions">
+            <inheritdoc />
+        </member>
+        <member name="T:Shesha.IO.NHibernate.QuotedNamingStrategy">
+            <summary>
+            Quoted naming strategy. Adds double quotes to the table and column names
+            Is used for case-sensitive databases like PostgreSQL
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`1">
+            <summary>
+            A shortcut of <see cref="T:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2"/> for most used primary key type (<see cref="T:System.Int32"/>).
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`1.#ctor(Shesha.IO.NHibernate.ISessionProvider)">
+            <summary>
+            Creates a new <see cref="T:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2"/> object.
+            </summary>
+            <param name="sessionProvider">A session provider to obtain session for database operations</param>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2">
+            <summary>
+            Base class for all repositories those uses NHibernate.
+            </summary>
+            <typeparam name="TEntity">Entity type</typeparam>
+            <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2.Session">
+            <summary>
+            Gets the NHibernate session object to perform database operations.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2.CurrentUnitOfWorkProvider">
+            <summary>
+            Reference to the current UOW provider.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2.SpecificationManager">
+            <summary>
+            Reference to the specifications manager.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2.#ctor(Shesha.IO.NHibernate.ISessionProvider)">
+            <summary>
+            Creates a new <see cref="T:Shesha.IO.NHibernate.Repositories.NhRepositoryBase`2"/> object.
+            </summary>
+            <param name="sessionProvider">A session provider to obtain session for database operations</param>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Session.LazySessionContext">
+            <summary>
+            Taken from http://nhforge.org/blogs/nhibernate/archive/2011/03/03/effective-nhibernate-session-management-for-web-apps.aspx
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.LazySessionContext.CurrentSession">
+            <summary>
+            Retrieve the current session for the session factory.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.LazySessionContext.Bind(System.Lazy{NHibernate.ISession},NHibernate.ISessionFactory)">
+            <summary>
+            Bind a new sessionInitializer to the context of the sessionFactory.
+            </summary>
+            <param name="sessionInitializer"></param>
+            <param name="sessionFactory"></param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.LazySessionContext.UnBind(NHibernate.ISessionFactory)">
+            <summary>
+            Unbind the current session of the session factory.
+            </summary>
+            <param name="sessionFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.LazySessionContext.GetCurrentFactoryMap">
+            <summary>
+            Provides the CurrentMap of SessionFactories.
+            If there is no map create/store and return a new one.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Session.SessionExtensions">
+            <summary>
+            Provides extension methods to easily find dirty properties for NHibernate.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.SessionExtensions.EndSession(NHibernate.ISession,System.Boolean)">
+            <summary>
+            Ends session and commit transaction if active
+            </summary>
+            <param name="session"></param>
+            <param name="commitTransaction"></param>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.SessionExtensions.LocalInterceptor(NHibernate.ISession)">
+            <summary>
+            Get NH session interceptor
+            </summary>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.SessionExtensions.DoAfterTransaction(NHibernate.ISession,System.Action)">
+            <summary>
+            Add an action that should be executed after successful completion of the current transaction
+            </summary>
+            <param name="session"></param>
+            <param name="action"></param>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Session.SessionStartException">
+            <summary>
+            Session start exception
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Session.UnitOfWorkSessionContext">
+            <summary>
+            Unit of work session context
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.UnitOfWorkSessionContext.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Session.UnitOfWorkSessionContext.CurrentSession">
+            <summary>
+            Returns current session
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Shesha.IO.NHibernate.SheshaDbMigrator.MigrationVersionFormat">
+            <summary>
+            Format of the migration version
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.SheshaDbMigrator.CreateServices(System.String)">
+            <summary>
+            Configure the dependency injection services
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.SheshaDbMigrator.CreateOrMigrate(Abp.MultiTenancy.AbpTenantBase,System.Action)">
+            <summary>
+            Update the database
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.SheshaDbMigrator.GetConnectionString(System.String)">
+            <summary>
+            Gets connection string from given connection string or name.
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.NHibernate.SheshaNHibernateModule._sessionFactory">
+            <summary>
+            NHibernate session factory object.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.SheshaNHibernateModule.#ctor(Abp.Reflection.IAssemblyFinder,Abp.Reflection.ITypeFinder)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.SheshaNHibernateModule.PostInitialize">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.SheshaNHibernateModule.SeedDatabase">
+            <summary>
+            Seed database (applies migrations, runs bootstrappers/seeders)
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.SheshaNHibernateModule.Shutdown">
+            <inheritdoc/>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.UnitOfWorkExtensions">
+            <summary>
+            Unit of work extensions
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UnitOfWorkExtensions.DoAfterTransaction(Abp.Domain.Uow.IActiveUnitOfWork,System.Action)">
+            <summary>
+            Add an action that should be executed after successful completion of the current transaction
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.UoW.NhUnitOfWork">
+            <summary>
+            Implements Unit of work for NHibernate.
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.NHibernate.UoW.NhUnitOfWork._session">
+            <summary>
+            NH session
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.GetSession(System.Boolean)">
+            <summary>
+            Returns current session or starts a new one is missing and <paramref name="startNewIfMissing"/> is true
+            </summary>
+            <param name="startNewIfMissing"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.UoW.NhUnitOfWork.DbConnection">
+            <summary>
+            <see cref="T:Shesha.IO.NHibernate.UoW.NhUnitOfWork"/> uses this DbConnection if it's set.
+            This is usually set in tests.
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.UoW.NhUnitOfWork.EntityHistoryHelper">
+            <summary>
+            Entity history helper
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.#ctor(NHibernate.ISessionFactory,Abp.Domain.Uow.IConnectionStringResolver,Abp.Domain.Uow.IUnitOfWorkDefaultOptions,Abp.Domain.Uow.IUnitOfWorkFilterExecuter,Shesha.IO.NHibernate.SheshaNHibernateModule)">
+            <summary>
+            Creates a new instance of <see cref="T:Shesha.IO.NHibernate.UoW.NhUnitOfWork"/>.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.BeginSession">
+            <summary>
+            Begin NH session
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.BeginUow">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.CheckAndSetSoftDelete">
+            <summary>
+            Check and set `SoftDelete` filter
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.CheckAndSetMustHaveTenant">
+            <summary>
+            Check and set `MustHaveTenant` filter
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.CheckAndSetMayHaveTenant">
+            <summary>
+            Check and set `MayHaveTenant` filter
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.SaveChanges">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.SaveChangesAsync">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.CompleteUow">
+            <summary>
+            Commits transaction and closes database connection.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.CompleteUowAsync">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.NhUnitOfWork.DisposeUow">
+            <summary>
+            Rollbacks transaction and closes database connection.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.UoW.SheshaNhUnitOfWork.#ctor(NHibernate.ISessionFactory,Abp.Domain.Uow.IConnectionStringResolver,Abp.Domain.Uow.IUnitOfWorkDefaultOptions,Abp.Domain.Uow.IUnitOfWorkFilterExecuter,Shesha.IO.NHibernate.SheshaNHibernateModule)">
+            <summary>
+            Creates a new instance of <see cref="T:Shesha.IO.NHibernate.UoW.SheshaNhUnitOfWork"/>.
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.NHibernate.Uow.NhUnitOfWorkFilterExecuter">
+            <summary>
+            NHibernate filter executer
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Uow.NhUnitOfWorkFilterExecuter.ApplyDisableFilter(Abp.Domain.Uow.IUnitOfWork,System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Uow.NhUnitOfWorkFilterExecuter.ApplyEnableFilter(Abp.Domain.Uow.IUnitOfWork,System.String)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Uow.NhUnitOfWorkFilterExecuter.ApplyFilterParameterValue(Abp.Domain.Uow.IUnitOfWork,System.String,System.String,System.Object)">
+            inheritedDoc
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Uow.NhUnitOfWorkFilterExecuter.SkipProcessing(Abp.Domain.Uow.IUnitOfWork,NHibernate.ISession@)">
+            <summary>
+            Returns true if the processing should be skipped. Session may be null if session factory uses lazy sessions
+            Note: we can safely skip enable/disable and parameters actions, state of the filters are stored as part of the <see cref="T:Abp.Domain.Uow.UnitOfWorkBase"/> and can be reapplied at any moment
+            </summary>
+            <param name="unitOfWork"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Shesha.IO.NHibernate.Utilites.NHibernateUtilities.ConnectionString">
+            <summary>
+            Connection string with password
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Utilites.NHibernateUtilities.GetConnectionString(System.String)">
+            <summary>
+            Returns connection string. Note: for the Azure environment - uses standard environment variable
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Utilites.NHibernateUtilities.EscapeDbObjectName(System.String)">
+            <summary>
+            Escape name of the DB object (e.g. column, table) to uise in raw sql
+            </summary>
+            <param name="sqlIdentifier">sql identifier (table name, column sname etc.)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Utilites.NHibernateUtilities.EscapeDbObjectNameForNH(System.String)">
+            <summary>
+            Escape name of the DB object (e.g. column, table) to tell NHibernate to generate a valid sql query
+            Note: for raw sql use <seealso cref="M:Shesha.IO.NHibernate.Utilites.NHibernateUtilities.EscapeDbObjectName(System.String)"/>
+            </summary>
+            <param name="sqlIdentifier">sql identifier (table name, column sname etc.)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.NHibernate.Utilites.NHibernateUtilities.UnescapeDbObjectName(System.String)">
+            <summary>
+            Unescape name of the DB object (e.g. column, table)
+            </summary>
+            <param name="sqlIdentifier"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.Services.DynamicRepository">
+            <summary>
+            Dynamic repository
+            </summary>
+        </member>
+        <member name="P:Shesha.Services.DynamicRepository.CurrentUnitOfWorkProvider">
+            <summary>
+            Reference to the current UOW provider.
+            </summary>
+        </member>
+        <member name="M:Shesha.Services.DynamicRepository.GetAsync(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Shesha.Services.DynamicRepository.Get(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Shesha.Services.DynamicRepository.GetAsync(System.Type,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Shesha.Services.DynamicRepository.Get(System.Type,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Shesha.Services.DynamicRepository.SaveOrUpdateAsync(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Shesha.Services.DynamicRepository.DeleteAsync(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Shesha.Services.DynamicRepository.Query``1">
+            <inheritdoc/>
+        </member>
+        <member name="T:Shesha.Services.NHibernateAppService">
+            <summary>
+            NHibernate application service
+            </summary>
+        </member>
+        <member name="M:Shesha.Services.NHibernateAppService.GetConventions">
+            <summary>
+            Get last compiled mapping conventions
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

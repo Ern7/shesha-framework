@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.Firebase</name>
+    </assembly>
+    <members>
+        <member name="T:Shesha.IO.Firebase.Configuration.FirebaseSettingNames">
+            <summary>
+            Contains consts for Firebase setting names.
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.Firebase.Configuration.FirebaseSettingNames.ServiceAccountJson">
+            <summary>
+            Shesha.IO.Ldap.IsEnabled
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Firebase.Configuration.IFirebaseSettings">
+            <summary>
+            Firebase settings
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Firebase.Configuration.IFirebaseSettings.ServiceAccountJson">
+            <summary>
+            Service Account JSON
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Firebase.Dtos.UpdateFirebaseSettingsInput.File">
+            <summary>
+            serviceAccountKey.json
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Firebase.FirebaseApplicationManager">
+            <summary>
+            Firebase application manager. Provides basic functions (e.g. get application instance, configure)
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.FirebaseApplicationManager.UpdateServiceAccountJson(System.IO.Stream)">
+            <summary>
+            Update ServiceAccountJson file
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.FirebaseApplicationManager.GetServiceAccountJson">
+            <summary>
+            Get content of ServiceAccountJson file
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.FirebaseApplicationManager.GetApplication">
+            <summary>
+            Get application instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Shesha.IO.Firebase.FirebaseAppService.Uid">
+            <summary>
+            Unique identifier of the <see cref="T:Shesha.IO.Firebase.FirebaseAppService"/> class, is used for references instead of class name
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.FirebaseAppService.UpdateSettings(Shesha.IO.Firebase.Dtos.UpdateFirebaseSettingsInput)">
+            <summary>
+            Updates Firebase settings
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.FirebaseAppService.SendNotificationToTopic(Shesha.Push.Dtos.SendNotificationToTopicInput)">
+            <summary>
+            Send notification to topic
+            </summary>
+            <param name="input"></param>
+            <returns>response from the Firebase API</returns>
+        </member>
+        <member name="M:Shesha.IO.Firebase.FirebaseAppService.SendNotificationToPersonAsync(Shesha.Push.Dtos.SendNotificationToPersonInput)">
+            <summary>
+            Sends notification to a person
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Firebase.IFirebaseApplicationManager">
+            <summary>
+            Firebase application provider
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.IFirebaseApplicationManager.GetApplication">
+            <summary>
+            Get current application
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shesha.IO.Firebase.IFirebaseApplicationManager.UpdateServiceAccountJson(System.IO.Stream)">
+            <summary>
+            Update ServiceAccountJson file
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Firebase.IFirebaseAppService">
+            <summary>
+            Firebase application service
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.IFirebaseAppService.UpdateSettings(Shesha.IO.Firebase.Dtos.UpdateFirebaseSettingsInput)">
+            <summary>
+            Updates Firebase settings
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Firebase.IFirebaseAppService.SendNotificationToTopic(Shesha.Push.Dtos.SendNotificationToTopicInput)">
+            <summary>
+            Send notification to topic
+            </summary>
+            <param name="input"></param>
+            <returns>response from the Firebase API</returns>
+        </member>
+        <member name="T:Shesha.SheshaFirebaseModule">
+            <summary>
+            This module extends module zero to add Firebase notifications.
+            </summary>
+        </member>
+    </members>
+</doc>

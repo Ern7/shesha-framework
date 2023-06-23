@@ -49,12 +49,12 @@
     <EmbeddedResource Include="DynamicEntities\Resources\nested2Levels.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Shesha.Application\Shesha.Application.csproj" />
-    <ProjectReference Include="..\..\src\Shesha.AzureAD\Shesha.AzureAD.csproj" />
-    <ProjectReference Include="..\..\src\Shesha.NHibernate\Shesha.NHibernate.csproj" />
-    <ProjectReference Include="..\..\src\Shesha.Scheduler\Shesha.Scheduler.csproj" />
-    <ProjectReference Include="..\..\src\Shesha.Web.Core\Shesha.Web.Core.csproj" />
-    <ProjectReference Include="..\..\src\Shesha.Web.FormsDesigner\Shesha.Web.FormsDesigner.csproj" />
+    <ProjectReference Include="..\..\src\Shesha.IO.Application\Shesha.IO.Application.csproj" />
+    <ProjectReference Include="..\..\src\Shesha.IO.AzureAD\Shesha.IO.AzureAD.csproj" />
+    <ProjectReference Include="..\..\src\Shesha.IO.NHibernate\Shesha.IO.NHibernate.csproj" />
+    <ProjectReference Include="..\..\src\Shesha.IO.Scheduler\Shesha.IO.Scheduler.csproj" />
+    <ProjectReference Include="..\..\src\Shesha.IO.Web.Core\Shesha.IO.Web.Core.csproj" />
+    <ProjectReference Include="..\..\src\Shesha.IO.Web.FormsDesigner\Shesha.IO.Web.FormsDesigner.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Abp.Castle.Log4Net" Version="6.6.2" />

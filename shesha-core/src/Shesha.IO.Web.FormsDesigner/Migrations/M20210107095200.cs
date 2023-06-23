@@ -1,0 +1,13 @@
+﻿using FluentMigrator;
+
+namespace Shesha.IO.Web.FormsDesigner.Migrations
+{
+    [Migration(20210107095200), MsSqlOnly]
+    public class M20210107095200: AutoReversingMigration
+    {
+        public override void Up()
+        {
+            Rename.Table("Forms").To("Frwk_Forms");
+        }
+    }
+}

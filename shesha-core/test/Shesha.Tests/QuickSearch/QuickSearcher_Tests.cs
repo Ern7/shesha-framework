@@ -90,7 +90,7 @@ namespace Shesha.Tests.QuickSearch
                 nameof(TestPerson.Title)
             });
 
-            var refListId = GetReflistId(new ReferenceListIdentifier(null, "Shesha.Core", "PersonTitles"));
+            var refListId = GetReflistId(new ReferenceListIdentifier(null, "Shesha.IO.Core", "PersonTitles"));
             
             var expected = $@"ent => value(NHibernate.Linq.NhQueryable`1[Shesha.Domain.ReferenceListItem]).Any(entTitle => (((entTitle.ReferenceList.Id == {refListId}) AndAlso (Convert(ent.Title, Nullable`1) == Convert(entTitle.ItemValue, Nullable`1))) AndAlso entTitle.Item.Contains(""mrs"")))";
 
@@ -132,7 +132,7 @@ namespace Shesha.Tests.QuickSearch
                 nameof(TestOrganisation.ContactMethods)
             });
 
-            Assert.Equal(@"ent => value(NHibernate.Linq.NhQueryable`1[Shesha.Domain.ReferenceListItem]).Any(entContactMethods => ((((entContactMethods.ReferenceList.Configuration.Module.Name == ""Shesha"") AndAlso (entContactMethods.ReferenceList.Configuration.Name == ""Shesha.Core.PreferredContactMethod"")) AndAlso ((Convert(ent.ContactMethods, Nullable`1) & Convert(entContactMethods.ItemValue, Nullable`1)) > Convert(0, Nullable`1))) AndAlso entContactMethods.Item.Contains(""email"")))", expression.ToString());
+            Assert.Equal(@"ent => value(NHibernate.Linq.NhQueryable`1[Shesha.Domain.ReferenceListItem]).Any(entContactMethods => ((((entContactMethods.ReferenceList.Configuration.Module.Name == ""Shesha"") AndAlso (entContactMethods.ReferenceList.Configuration.Name == ""Shesha.IO.Core.PreferredContactMethod"")) AndAlso ((Convert(ent.ContactMethods, Nullable`1) & Convert(entContactMethods.ItemValue, Nullable`1)) > Convert(0, Nullable`1))) AndAlso entContactMethods.Item.Contains(""email"")))", expression.ToString());
         }
 
         [Fact]
@@ -152,7 +152,7 @@ namespace Shesha.Tests.QuickSearch
 
             var refList = new ReferenceList {
                 Id = Guid.NewGuid(),
-                Namespace = "Shesha.Core",
+                Namespace = "Shesha.IO.Core",
                 Name = "PreferredContactMethod",
                 Module = new Domain.ConfigurationItems.Module { Name = "Shesha" }
             };
@@ -228,7 +228,7 @@ namespace Shesha.Tests.QuickSearch
         public virtual RefListPersonTitle? Title { get; set; }
         public virtual TestOrganisation Organisation { get; set; }
         
-        [ReferenceList("Shesha.Core", "PreferredContactMethod")]
+        [ReferenceList("Shesha.IO.Core", "PreferredContactMethod")]
         public virtual Int64? PreferredContactMethod { get; set; }
     }
 
@@ -238,7 +238,7 @@ namespace Shesha.Tests.QuickSearch
         public virtual string Name { get; set; }
         public virtual string Address { get; set; }
         
-        [MultiValueReferenceList("Shesha.Core", "PreferredContactMethod"/*, Module = "Shesha"*/)]
+        [MultiValueReferenceList("Shesha.IO.Core", "PreferredContactMethod"/*, Module = "Shesha"*/)]
         public virtual Int64? ContactMethods { get; set; }
     }
 

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shesha.IO.Ldap</name>
+    </assembly>
+    <members>
+        <member name="T:Shesha.IO.Ldap.Authentication.LdapAuthenticationSource`2">
+            <summary>
+            Implements <see cref="T:Abp.Authorization.Users.IExternalAuthenticationSource`2"/> to authenticate users from LDAP.
+            Extend this class using application's User and Tenant classes as type parameters.
+            Also, all needed methods can be overridden and changed upon your needs.
+            </summary>
+            <typeparam name="TTenant">Tenant type</typeparam>
+            <typeparam name="TUser">User type</typeparam>
+        </member>
+        <member name="F:Shesha.IO.Ldap.Authentication.LdapAuthenticationSource`2.SourceName">
+            <summary>
+            LDAP
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Ldap.Authentication.LdapAuthenticationSource`2.TryAuthenticateAsync(System.String,System.String,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Shesha.IO.Ldap.Configuration.ILdapSettings">
+            <summary>
+            LDAP Settings
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Ldap.Configuration.ILdapSettings.IsEnabled">
+            <summary>
+            Is Enabled
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Ldap.Configuration.ILdapSettings.Server">
+            <summary>
+            LDAP Server
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Ldap.Configuration.ILdapSettings.Port">
+            <summary>
+            Port
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Ldap.Configuration.ILdapSettings.UseSsl">
+            <summary>
+            Use SSL
+            </summary>
+        </member>
+        <member name="P:Shesha.IO.Ldap.Configuration.ILdapSettings.Domain">
+            <summary>
+            Domain
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Ldap.Configuration.LdapSettingNames">
+            <summary>
+            Contains consts for LDAP setting names.
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.Ldap.Configuration.LdapSettingNames.IsEnabled">
+            <summary>
+            Shesha.IO.Ldap.IsEnabled
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.Ldap.Configuration.LdapSettingNames.Server">
+            <summary>
+            Shesha.IO.Ldap.Server
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.Ldap.Configuration.LdapSettingNames.Port">
+            <summary>
+            Shesha.IO.Ldap.Port
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.Ldap.Configuration.LdapSettingNames.UseSsl">
+            <summary>
+            Shesha.IO.Ldap.UseSsl
+            </summary>
+        </member>
+        <member name="F:Shesha.IO.Ldap.Configuration.LdapSettingNames.Domain">
+            <summary>
+            Shesha.IO.Ldap.Domain
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Ldap.Configuration.SheshaLdapConfigurationExtensions">
+            <summary>
+            Extension methods for module zero configurations.
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Ldap.Configuration.SheshaLdapConfigurationExtensions.SheshaLdap(Abp.Configuration.Startup.IModuleConfigurations)">
+            <summary>
+            Configures Shesha LDAP module.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Shesha.IO.Ldap.ILdapAppService">
+            <summary>
+            LDAP application service
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Ldap.ILdapAppService.UpdateSettings(Shesha.IO.Ldap.Dtos.LdapSettingsDto)">
+            <summary>
+            Update LDAP settings
+            </summary>
+        </member>
+        <member name="M:Shesha.IO.Ldap.ILdapAppService.GetSettings">
+            <summary>
+            Returns LDAP settings
+            </summary>
+        </member>
+        <member name="T:Shesha.IO.Ldap.LdapAppService">
+            inheritDoc
+        </member>
+        <member name="M:Shesha.IO.Ldap.LdapAppService.UpdateSettings(Shesha.IO.Ldap.Dtos.LdapSettingsDto)">
+            inheritDoc
+        </member>
+        <member name="M:Shesha.IO.Ldap.LdapAppService.GetSettings">
+            inheritDoc
+        </member>
+        <member name="T:Shesha.IO.Ldap.SheshaLdapModule">
+            <summary>
+            This module extends module zero to add LDAP authentication.
+            </summary>
+        </member>
+    </members>
+</doc>
