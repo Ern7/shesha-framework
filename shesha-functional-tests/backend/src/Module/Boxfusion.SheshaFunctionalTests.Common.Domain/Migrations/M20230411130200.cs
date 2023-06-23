@@ -1,5 +1,5 @@
 ﻿using FluentMigrator;
-using Shesha.FluentMigrator;
+using Shesha.IO.FluentMigrator;
 using System;
 using System.Collections.Generic;
 using System.Linq;

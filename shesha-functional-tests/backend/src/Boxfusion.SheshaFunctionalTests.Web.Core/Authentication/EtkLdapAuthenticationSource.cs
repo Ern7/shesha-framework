@@ -1,6 +1,6 @@
 using Shesha.Authorization.Users;
-using Shesha.Ldap.Authentication;
-using Shesha.Ldap.Configuration;
+using Shesha.IO.Ldap.Authentication;
+using Shesha.IO.Ldap.Configuration;
 using Shesha.MultiTenancy;
 
 namespace Boxfusion.SheshaFunctionalTests.Authentication

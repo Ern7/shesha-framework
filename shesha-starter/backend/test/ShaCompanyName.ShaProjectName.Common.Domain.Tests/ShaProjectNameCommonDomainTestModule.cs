@@ -17,7 +17,7 @@ using Moq;
 using NSubstitute;
 using ShaCompanyName.ShaProjectName.Tests.DependencyInjection;
 using Shesha;
-using Shesha.NHibernate;
+using Shesha.IO.NHibernate;
 using Shesha.Services;
 using Abp.Domain.Uow;
 using System.Reflection;

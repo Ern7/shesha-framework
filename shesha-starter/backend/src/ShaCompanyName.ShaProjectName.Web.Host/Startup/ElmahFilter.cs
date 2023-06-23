@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using System.Threading.Tasks;
-using Shesha.Elmah;
+using Shesha.IO.Elmah;
 
 namespace ShaCompanyName.ShaProjectName.Web.Host.Startup
 {

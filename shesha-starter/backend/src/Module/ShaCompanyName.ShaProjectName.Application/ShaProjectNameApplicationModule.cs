@@ -10,7 +10,7 @@ using ShaCompanyName.ShaProjectName.Domain;
 using Shesha;
 using Shesha.Modules;
 using Shesha.Startup;
-using Shesha.Web.FormsDesigner;
+using Shesha.IO.Web.FormsDesigner;
 
 [assembly: IntentTemplate("Boxfusion.Modules.Application.Services.AppService", Version = "1.0")]
 [assembly: DefaultIntentManaged(Mode.Fully)]

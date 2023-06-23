@@ -1,6 +1,6 @@
 ﻿using FluentMigrator;
 using System;
-using Shesha.FluentMigrator;
+using Shesha.IO.FluentMigrator;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

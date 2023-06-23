@@ -7,7 +7,7 @@ using Abp.Reflection.Extensions;
 using Intent.RoslynWeaver.Attributes;
 using Shesha;
 using Shesha.Startup;
-using Shesha.Web.FormsDesigner;
+using Shesha.IO.Web.FormsDesigner;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Boxfusion.Modules.Application.Services.AppService", Version = "1.0")]

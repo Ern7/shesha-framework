@@ -23,7 +23,7 @@ using Moq;
 using NSubstitute;
 using Shesha;
 using Shesha.Configuration.Startup;
-using Shesha.NHibernate;
+using Shesha.IO.NHibernate;
 using Shesha.Services;
 using System;
 using System.Reflection;

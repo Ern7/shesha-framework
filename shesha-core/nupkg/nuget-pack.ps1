@@ -7,24 +7,24 @@ $srcPath = Join-Path $slnPath "src"
 
 # List of projects
 $projects = (
-	"Shesha.Application",
-	"Shesha.AzureAD",
-	"Shesha.Core",
-	"Shesha.Elmah",
-	"Shesha.Firebase",
-	"Shesha.Framework",
-	"Shesha.Import",
-	"Shesha.Ldap",
-	"Shesha.MongoRepository",
-	"Shesha.NHibernate",
-	"Shesha.Scheduler",
-	"Shesha.Sms.BulkSms",
-	"Shesha.Sms.Clickatell",
-	"Shesha.Sms.SmsPortal",
-	"Shesha.Sms.Xml2Sms",
-	"Shesha.Web.Controls",
-	"Shesha.Web.FormsDesigner",
-	"Shesha.RestSharp"
+	"Shesha.IO.Application",
+	"Shesha.IO.AzureAD",
+	"Shesha.IO.Core",
+	"Shesha.IO.Elmah",
+	"Shesha.IO.Firebase",
+	"Shesha.IO.FluentMigrator",
+	"Shesha.IO.Framework",
+	"Shesha.IO.GraphQL",
+	"Shesha.IO.Import",
+	"Shesha.IO.Ldap",
+	"Shesha.IO.MongoRepository",
+	"Shesha.IO.NHibernate",
+	"Shesha.IO.RestSharp",
+	"Shesha.IO.Scheduler",
+	"Shesha.IO.Sms.BulkSms",
+	"Shesha.IO.Sms.Clickatell",
+	"Shesha.IO.Sms.SmsPortal",
+	"Shesha.IO.Sms.Xml2Sms"
 )
 
 # Rebuild solution

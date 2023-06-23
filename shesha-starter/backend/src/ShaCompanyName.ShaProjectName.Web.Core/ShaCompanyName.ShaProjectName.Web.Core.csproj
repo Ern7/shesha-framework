@@ -39,15 +39,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Shesha.AzureAD" Version="4.35.15" />
-    <PackageReference Include="Shesha.Firebase" Version="4.35.15" />
-    <PackageReference Include="Shesha.Import" Version="4.35.15" />
-    <PackageReference Include="Shesha.Ldap" Version="4.35.15" />
-    <PackageReference Include="Shesha.Sms.BulkSms" Version="4.35.15" />
-    <PackageReference Include="Shesha.Sms.Clickatell" Version="4.35.15" />
-    <PackageReference Include="Shesha.Sms.SmsPortal" Version="4.35.15" />
-    <PackageReference Include="Shesha.Sms.Xml2Sms" Version="4.35.15" />
-    <PackageReference Include="Shesha.Web.FormsDesigner" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.AzureAD" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Firebase" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Import" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Ldap" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Sms.BulkSms" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Sms.Clickatell" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Sms.SmsPortal" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Sms.Xml2Sms" Version="4.35.15" />
+    <PackageReference Include="Shesha.IO.Web.FormsDesigner" Version="4.35.15" />
   </ItemGroup>
 
   <ItemGroup>

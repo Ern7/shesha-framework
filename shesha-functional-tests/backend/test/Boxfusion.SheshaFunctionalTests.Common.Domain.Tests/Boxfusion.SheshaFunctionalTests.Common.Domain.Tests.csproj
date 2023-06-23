@@ -45,9 +45,9 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.2" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\..\..\..\shesha-core\src\Shesha.Application\Shesha.Application.csproj" />
-	  <ProjectReference Include="..\..\..\..\shesha-core\src\Shesha.Core\Shesha.Core.csproj" />
-	  <ProjectReference Include="..\..\..\..\shesha-core\src\Shesha.Framework\Shesha.Framework.csproj" />
+	  <ProjectReference Include="..\..\..\..\shesha-core\src\Shesha.IO.Application\Shesha.IO.Application.csproj" />
+	  <ProjectReference Include="..\..\..\..\shesha-core\src\Shesha.IO.Core\Shesha.IO.Core.csproj" />
+	  <ProjectReference Include="..\..\..\..\shesha-core\src\Shesha.IO.Framework\Shesha.IO.Framework.csproj" />
 	  <ProjectReference Include="..\..\src\Module\Boxfusion.SheshaFunctionalTests.Common.Domain\Boxfusion.SheshaFunctionalTests.Common.Domain.csproj" />
 	</ItemGroup>
 

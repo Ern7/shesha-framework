@@ -1,6 +1,6 @@
 ﻿using Shesha.Authorization.Users;
-using Shesha.AzureAD.Authentication;
-using Shesha.AzureAD.Configuration;
+using Shesha.IO.AzureAD.Authentication;
+using Shesha.IO.AzureAD.Configuration;
 using Shesha.MultiTenancy;
 
 namespace ShaCompanyName.ShaProjectName.Authentication

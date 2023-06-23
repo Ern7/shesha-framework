@@ -1,5 +1,5 @@
 ﻿using FluentMigrator;
-using Shesha.FluentMigrator;
+using Shesha.IO.FluentMigrator;
 using System;
 
 namespace Boxfusion.SheshaFunctionalTests.Common.Domain.Migrations

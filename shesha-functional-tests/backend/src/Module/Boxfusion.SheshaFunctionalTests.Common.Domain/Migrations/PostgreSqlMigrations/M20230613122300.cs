@@ -1,5 +1,5 @@
 ﻿using FluentMigrator;
-using Shesha.FluentMigrator;
+using Shesha.IO.FluentMigrator;
 
 namespace Boxfusion.SheshaFunctionalTests.Common.Domain.Migrations.PostgreSqlMigrations
 {
